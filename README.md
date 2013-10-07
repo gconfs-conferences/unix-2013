@@ -40,11 +40,11 @@ Plan de la conf (au 7/10/2013)
 	
 * Partie graphes :
 
-	* Montrer si possible http://www.levenez.com/unix/unix.pdf pour
+	* Montrer si possible [ca](http://www.levenez.com/unix/unix.pdf) pour
 	insister sur le fait qu'UNIX c'est pas qu'une petite partie de
 	l'histoire de l'info.
 	
-	* http://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
+	* [ca aussi](http://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg)
 	
 * Bien choisir sa distribution (Dettorer & Bruce) :
 	
@@ -206,7 +206,7 @@ Plan de la conf (au 7/10/2013)
 					* Gestion des drivers remarquablement bon pour une BSD
 					* Système de "ports", et packages binaires via pkg_add
 			
-			* Autres UNIX-likes (?)
+			* Autres UNIX-likes (Wxcafé)
 				
 				* Plan9 :
 					* Evolution directe de AT&T UNIX
@@ -263,7 +263,7 @@ Plan de la conf (au 7/10/2013)
 					* Base de plusieurs OS completement libres : OpenDarwin,
 					  PureDarwin...
 				
-				*Autres :
+				* Autres :
 					* AIX (IBM)
 					* BlackBerry 10
 					* Android
