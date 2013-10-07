@@ -1,7 +1,7 @@
-UNIX - Paul 'Dettorer' Hervot, Kaci 'Bruce' Adjou
-=================================================
+UNIX - Paul 'Dettorer' Hervot, Kaci 'Bruce' Adjou, Clément 'Wxcafé' Hertling
+============================================================================
 
-Plan de la conf (au 3/10/2013)
+Plan de la conf (au 7/10/2013)
 ------------------------------ 
 
 * Introduction historique (Dettorer & Bruce)
@@ -36,13 +36,15 @@ Plan de la conf (au 3/10/2013)
 	
 	* Revenir sur POSIX
 	
-	* Insister sur le fait que Linux = Noyau et non os.
+	* Insister sur le fait que Linux = Noyau et non OS.
 	
 * Partie graphes :
 
 	* Montrer si possible http://www.levenez.com/unix/unix.pdf pour
 	insister sur le fait qu'UNIX c'est pas qu'une petite partie de
 	l'histoire de l'info.
+	
+	* http://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
 	
 * Bien choisir sa distribution (Dettorer & Bruce) :
 	
@@ -56,7 +58,10 @@ Plan de la conf (au 3/10/2013)
 		* Insister sur le fait que les users de différentes distribs
 		n'auront pas spécialement les mêmes opérations à effectuer
 		(genre Gentoo)
-	
+		* Parler du fait que certaines distributions sont vraiment différentes,
+		genre [Source Mage Linux](http://www.sourcemage.org/), [Gobo Linux](http://www.gobolinux.org/?page=at_a_glance) ou [crux](http://crux.nu/), 
+		et sont donc completement incompatibles au niveau du système. 
+			
 	* Exemples de distributions :
 		
 		* User friendly (cherche à reproduire l'expérience windows,
@@ -74,6 +79,12 @@ Plan de la conf (au 3/10/2013)
 				  propres ou sont hébergés leurs projets persos
 				* Intègre de base des logiciels propriétaires -> expérience 
 				  utilisateur ++.
+
+			* elementaryOS :
+				* Basée sur Ubuntu
+				* Dépots propres
+				* Interface très simple, ressemble beaucoup a OS X
+				* Integre de base des logiciels proprios, codecs, drivers, etc.
 			
 			* Manjaro Linux (ou Manjaro)
 				* Basée sur Arch Linux
@@ -257,6 +268,7 @@ Plan de la conf (au 3/10/2013)
 					* BlackBerry 10
 					* Android
 					* Firefox OS
+					* Haiku (posix compliant, clone de BeOS)
 					* HP-UX
 					* IRIX (Silicon GraphX, MIPS)
 					* LynxOS (Real-Time OS, used in aeronautics, telecom...)
