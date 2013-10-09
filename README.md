@@ -4,7 +4,7 @@ UNIX - Paul 'Dettorer' Hervot, Kaci 'Bruce' Adjou, Clément 'Wxcafé' Hertling
 Plan de la conf (au 7/10/2013)
 ------------------------------ 
 
-* Introduction historique (Dettorer & Bruce)
+* Introduction historique (Wxcafé,Bruce)
 	
 	* Fin des années 60 : UNICS @ Bell Laboratories
 	
@@ -22,7 +22,7 @@ Plan de la conf (au 7/10/2013)
 	
 	* 1988 : POSIX apparait, décrire ce qu'est POSIX (standards
 	garantissant la compatibilité entre différents OS, parler
-	rapidement des signals tels que SIGINT, SIGKILL par exemple et
+	rapidement des signaux tels que SIGINT, SIGKILL par exemple et
 	rajouter quelques phrases sur les logiciels garantis par POSIX
 	(genre vi)).
 	
@@ -30,7 +30,7 @@ Plan de la conf (au 7/10/2013)
 	l'histoire de Torvalds puis afficher son message sur
 	comp.os.minix).
 	
-* Explications sur des notions importantes (Dettorer & Bruce)
+* Explications sur des notions importantes (Dettorer,Wxcafé,Bruce)
 
 	* Différence entre UNIX compliant et UNIX like
 	
@@ -46,7 +46,7 @@ Plan de la conf (au 7/10/2013)
 	
 	* [ca aussi](http://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg)
 	
-* Bien choisir sa distribution (Dettorer & Bruce) :
+* Bien choisir sa distribution (Dettorer, Bruce, Wxcafé) :
 	
 	* Notion de Distribution (Bruce)
 		* C'est *un OS*
@@ -250,7 +250,7 @@ Plan de la conf (au 7/10/2013)
 					* Projet GNU depuis 1990, toujours pas en version stable
 					* Remplacement du noyau UNIX open-source, alternative a
 					  Linux
-					* Microkernel (expliquer ce qu'est un Microkernel)
+					* Microkernel (expliquer rapidement ce qu'est un Microkernel)
 					* Étend sur UNIX quasiment autant que Plan9, du moins dans
 					  le concept.
 				
@@ -279,7 +279,7 @@ Plan de la conf (au 7/10/2013)
 					* WebOS (Palm puis HP puis LG)
 					* much much more... (montrer le graph ici?)
 				 
-	* La console : qu'est ce que c'est ? (Dettorer & Bruce)
+	* La console : qu'est ce que c'est ? (Dettorer,Wxcafé,Bruce)
 		
 		* présenter rapidement ce qu'est la console (avec un screen /
 		une vm qui tourne)
@@ -298,8 +298,8 @@ Plan de la conf (au 7/10/2013)
 				* Introduire rapidement vim, nano pour l'édition de
 				fichiers.
 			
-			* Introduire man avec les arguments qu'on peut passer à ls
-			(ou autre commande, genre sl :D)
+			* Introduire man avec les arguments qu'on peut passer à une
+            commande
 			
 			* Expliquer qui est l'user "root", et pourquoi il faut faire
 			gaffe lorsqu'on utilise certaines commandes en root.
@@ -316,7 +316,7 @@ Plan de la conf (au 7/10/2013)
 		* Install Party
 			* faire un pdf explicatif (avertir les mecs qui n'ont jamais
 			partitionné leur disque qu'ils peuvent utiliser une vm par
-			exemple ?
+			exemple ?)
 		
 		* Protocole pour design des scripts, pour ceux qui ont déjà pu
-		toucher à du linux/unix avant.
+		toucher à du linux/unix avant. (Dettorer,Wxcafé)
