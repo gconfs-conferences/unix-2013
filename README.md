@@ -277,7 +277,8 @@ Plan de la conf (au 7/10/2013)
 					* QNX (base de la BlackBerry Playbook)
 					* Ultrix (Unix for DEC minicomputers (PDPs))
 					* WebOS (Palm puis HP puis LG)
-					* much much more... (montrer le graph ici?)
+					* much much more... (montrer le graph ici? Oui, mais
+                    parler **rapidement** de ce qui est cité plus haut)
 				 
 	* La console : qu'est ce que c'est ? (Dettorer,Wxcafé,Bruce)
 		
