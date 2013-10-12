@@ -90,16 +90,94 @@
 ## Manjaro Linux
 
 - Basée sur Arch Linux
-- Est en Rolling en Release
+- Est en rolling release
 - Beaucoup plus user friendly qu'Arch (de l'installation à
   l'utilisation)
 - Dépôts :
     - Propres à Manjaro
     - Arch Linux (avec un peu de retard)
-    ~ AUR
+    - AUR
 
 ## PC-BSD
 
 - Basée sur freeBSD
 - Procédure d'installation très simplifiée avec beaucoup de logiciels
   préinstallés
+
+## Debian
+
+- Très stable
+- Developpée par des bénévoles issus de la communauté Debian
+- Paquets plutôt vieux par rapport aux autres distributions
+
+## Slackware
+
+- Très stable
+- Paquets vieux par rapport aux autres distributions
+- Le gestionnaire de paquets ne gère pas les dépendances
+
+
+## RHEL
+
+- Maintenue par Red hat
+- Paquêts un peu moins vieux que Debian
+- Utilise systemd
+- Assez proche de Fedora
+
+## SUSE entreprise
+
+- Orientée business (comme RHEL)
+- Il existe une version gratuite et communautaire : OpenSUSE
+
+## Arch Linux
+
+- Est en rolling release
+- Les outils sont intégrés peu de temps après leur release
+    - Les users peuvent alors subir plus de bugs, cela n'empêche pas la
+          mise à jour régulière de la distro
+          - Utilise systemd
+          - La documentation est régulièrement mise à jour et la
+            communauté
+              particulièrement réactive
+                  - Phrase sur le Beginner's Guide (TODO)
+
+## BSD etc
+
+**TODO** (ping wxcafe)
+
+# La console
+
+## La console
+
+TODO
+
+## Le shell
+
+- C'est un interpréteur
+- ...de commandes entrées par l'utilisateur
+- Il lie l'utilisateur à sa machine
+
+## Sh
+
+- TODO
+
+## Bash
+
+- TODO
+
+## Csh
+
+- TODO
+
+## Zsh
+
+- TODO
+
+# Les commandes
+
+## Amusons nous avec les fichiers
+
+- Nous avons vu plus haut qu'il était possible d'interagir avec notre
+  sytème via des commandes.
+- Commençons par créer un dossier :\newline
+    42sh$ mkdir "test"
