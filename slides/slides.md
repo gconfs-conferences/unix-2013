@@ -25,7 +25,7 @@
         - Standardisation des différents systèmes basés sur UNIX.
         - POSIX garantit la présence de signaux permettant la
           gestion de processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL etc..)
-        - ... mais aussi la compabilité de certains logiciels
+        - ... mais aussi la présence de certains logiciels
           quelques soient les OS sur les quels ils sont utilisés
           (ex : vi, ls, sh etc)
 
@@ -37,3 +37,69 @@
 ![](/home/bruce/slides_unix/ressources/torvalds.PNG)
 
 ## Précisions
+
+- Il existe deux types de systèmes UNIX :
+    - UNIX compliant
+    - UNIX-like
+
+- Linux != OS
+
+# Bien choisir sa distribution
+
+## Systèmes d'Exploitation
+
+- Wtf is a distribution ?
+    - Une distribution est un Système d'Exploitation
+    - Le terme désigne l'OS et ce qui l'entoure
+
+- Choisir sa distribution est primordial
+    - Un utilisateur n'aura pas les mêmes réflexes suivant la
+      distribution :
+        les outils, concepts et l'organisation du système
+        peuvent différer entre deux distributions (ex : le package
+        manager de Gentoo et Arch Linux)
+
+- On peut distinguer trois types de distributions :
+    - User friendly
+    - Stable
+    - Pour utilisateurs avancés
+
+# Quelques exemples de distributions
+
+## Ubuntu
+
+- Basée sur Debian
+- Possède un écosystème riche développé par Canonical
+- Très populaire pour sa simplicité de prise en main
+
+## Linux Mint
+
+- Basée sur Ubuntu
+    - Il existe aussi une version basée sur Debian Testing (LMDE)
+- Possède ses propres dépôts mais les utilisateurs ont aussi accès
+      aux dépôts Ubuntu (Debian dans le cas de LMDE)
+- Intègre de base des logiciels propriétaires (ex : flash player)
+
+## elementary OS
+
+- Basée sur Ubuntu
+- Possède ses propres dépôts
+- Interface simpliste (avec quelques ressemblances à OS X)
+- Intègre de base des logiciels et drivers propriétaires (comme Mint)
+
+## Manjaro Linux
+
+- Basée sur Arch Linux
+- Est en Rolling en Release
+- Beaucoup plus user friendly qu'Arch (de l'installation à
+  l'utilisation)
+- Dépôts :
+    - Propres à Manjaro
+    - Arch Linux (avec un peu de retard)
+    ~ AUR
+
+## PC-BSD
+
+- Basée sur freeBSD
+- Procédure d'installation très simplifiée avec beaucoup de logiciels
+  préinstallés
