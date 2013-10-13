@@ -1,6 +1,13 @@
 UNIX - Paul 'Dettorer' Hervot, Kaci 'Bruce' Adjou, Clément 'Wxcafé' Hertling
 ============================================================================
 
+ATTENTION : Modifier le .md pour avoir les chemins corrects pour les
+illusrations (ça n'a pas l'air de marcher avec
+~/conf-unix/ressources/whatever=)
+Pdf à générer avec la commande : 
+pandoc -t beamer slides/slides.md --include-in-header slides/header.tex
+-V theme:Warsaw -o /path/to/output
+
 Plan de la conf (au 7/10/2013)
 ------------------------------ 
 

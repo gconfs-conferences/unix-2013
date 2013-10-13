@@ -1,7 +1,3 @@
-% Introduction à UNIX
-% Dettorer, wxcafe, Bruce
-% 18 Octobre 2013
-
 # Un peu d'histoire
 
 ## Années 70
@@ -224,5 +220,38 @@ TODO
 
 - Nous avons vu plus haut qu'il était possible d'interagir avec notre
   sytème via des commandes.
-- Commençons par créer un dossier :\newline
-    42sh$ mkdir "test"
+
+- On peut aussi opérer sur des fichiers et/ou dossiers :
+    mkdir, cd, cp, mv, rm, ln
+
+- Les fichiers peuvent être édités en console grâce à des éditeurs :
+    - vi
+        - Ecrit par Bill Joy en 1976
+        - Est présent sur tous les systèmes UNIX (depuis la version 3 de
+          la Single Unix Specification).
+    - GNU nano
+        - Ecrit par Chris Allegretta en 1999 afin de remplacer pico
+        - Présent sur la plupart des systèmes UNIX-like
+
+##
+
+\begin{center}\includegraphics[scale=0.42]{/home/bruce/conf-unix/ressources/manofsteel}\end{center}
+
+## man
+
+man man
+
+
+## got root ?
+
+- Qui est root ?
+    - Le premier utilisateur sur un système d'exploitation
+    - Il a **tous** les droits :
+        - Il est donc préférable de ne pas se connecter en root sur son
+          système (sauf pour des opérations de maintenance ... et
+          encore)
+        - "With great power comes great responsibility"\newline
+            > chmod -R 777 /
+
+##
+\begin{center}\includegraphics[scale=0.5]{/home/bruce/conf-unix/ressources/sandwich}\end{center}
