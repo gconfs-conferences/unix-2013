@@ -1,5 +1,5 @@
 % Introduction à UNIX
-% Dettorer, wxcafé, Bruce
+% Dettorer, wxcafe, Bruce
 % 18 Octobre 2013
 
 # Un peu d'histoire
@@ -12,29 +12,31 @@
   l'exterieur.
 - 1977 : Bill Joy travaille sur la première version de BSD : 1BSD
 
-## Années 80 - 90
+## 1983 
 
-- 1983 : 
-    - Richard Stallman annonce son intention de développer un système d'exploitation libre
+- Richard Stallman annonce son intention de développer un système d'exploitation libre
       appelé GNU (GNU's not UNIX)
-    - AT&T annonce la sortie de System V, première version propriétaire
+- AT&T annonce la sortie de System V, première version véritablement propriétaire
       d'UNIX
-- 1988 :
-    - Apparition du standard POSIX (Portable Operating System Interface
+
+
+## 1988 
+
+- Apparition du standard POSIX (Portable Operating System Interface
       for uniX)
-        - Standardisation des différents systèmes basés sur UNIX.
-        - POSIX garantit la présence de signaux permettant la
+    - Standardisation des différents systèmes basés sur UNIX.
+	- POSIX garantit la présence de signaux permettant la
           gestion de processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL etc..)
-        - ... mais aussi la présence de certains logiciels
+	- ... mais aussi la présence de certains logiciels
           quelques soient les OS sur les quels ils sont utilisés
           (ex : vi, ls, sh etc)
 
-- 1991 :
-    - Naissance du Noyau Linux
+## 1991 :
 
-##
-
-![](/home/bruce/slides_unix/ressources/torvalds.PNG)
+- Naissance du Noyau Linux
+	- Annonce sur comp.os.minix (Usenet) par Linus Torvalds
+	- Première release quelques mois plus tard
+	- Engouement pour le projet dès la première release 
 
 ## Précisions
 
@@ -46,33 +48,39 @@
 
 # Bien choisir sa distribution
 
-## Systèmes d'Exploitation
+## "Distributions"?...
 
 - Wtf is a distribution ?
-    - Une distribution est un Système d'Exploitation
-    - Le terme désigne l'OS et ce qui l'entoure
+    - Une distribution est un système d'exploitation basé sur GNU/Linux
+    - Le terme désigne l'écosystème qui entoure l'OS : 
+		- le gestionnaire de paquet
+		- les outils spécifiques a la distribution
+		- les différences avec les standards
+		- etc...
+
+## Choisir sa distribution
 
 - Choisir sa distribution est primordial
-    - Un utilisateur n'aura pas les mêmes réflexes suivant la
+    - Un utilisateur n'aura pas la mème experience suivant la
       distribution :
-        les outils, concepts et l'organisation du système
-        peuvent différer entre deux distributions (ex : le package
-        manager de Gentoo et Arch Linux)
+		- les procédés d'installation, de mise a jour, de gestion,... diffèrent
+		- l'état du système après une installation basique diffère
+		- la "cible" des distributions est différente
 
 - On peut distinguer trois types de distributions :
     - User friendly
     - Stable
-    - Pour utilisateurs avancés
+    - Avancée
 
 # Quelques exemples de distributions
 
-## Ubuntu
+## Ubuntu (User Friendly)
 
 - Basée sur Debian
 - Possède un écosystème riche développé par Canonical
 - Très populaire pour sa simplicité de prise en main
 
-## Linux Mint
+## Linux Mint (User Friendly)
 
 - Basée sur Ubuntu
     - Il existe aussi une version basée sur Debian Testing (LMDE)
@@ -80,14 +88,14 @@
       aux dépôts Ubuntu (Debian dans le cas de LMDE)
 - Intègre de base des logiciels propriétaires (ex : flash player)
 
-## elementary OS
+## elementary OS (User Friendly)
 
 - Basée sur Ubuntu
 - Possède ses propres dépôts
 - Interface simpliste (avec quelques ressemblances à OS X)
 - Intègre de base des logiciels et drivers propriétaires (comme Mint)
 
-## Manjaro Linux
+## Manjaro Linux (User Friendly)
 
 - Basée sur Arch Linux
 - Est en rolling release
@@ -98,52 +106,89 @@
     - Arch Linux (avec un peu de retard)
     - AUR
 
-## PC-BSD
+## PC-BSD (User Friendly)
 
 - Basée sur freeBSD
 - Procédure d'installation très simplifiée avec beaucoup de logiciels
   préinstallés
 
-## Debian
+## Debian (stable)
 
 - Très stable
 - Developpée par des bénévoles issus de la communauté Debian
 - Paquets plutôt vieux par rapport aux autres distributions
 
-## Slackware
+## Slackware (stable)
 
 - Très stable
 - Paquets vieux par rapport aux autres distributions
 - Le gestionnaire de paquets ne gère pas les dépendances
 
 
-## RHEL
+## RHEL (stable)
 
 - Maintenue par Red hat
 - Paquêts un peu moins vieux que Debian
 - Utilise systemd
 - Assez proche de Fedora
 
-## SUSE entreprise
+## SUSE entreprise (stable)
 
 - Orientée business (comme RHEL)
 - Il existe une version gratuite et communautaire : OpenSUSE
 
-## Arch Linux
+## Arch Linux (Advanced Users)
 
 - Est en rolling release
 - Les outils sont intégrés peu de temps après leur release
-    - Les users peuvent alors subir plus de bugs, cela n'empêche pas la
-          mise à jour régulière de la distro
-          - Utilise systemd
-          - La documentation est régulièrement mise à jour et la
-            communauté
-              particulièrement réactive
-                  - Phrase sur le Beginner's Guide (TODO)
+	- Les users peuvent alors subir plus de bugs, cela n'empêche pas la
+		mise à jour régulière de la distro
+		- Utilise systemd
+		- La documentation est régulièrement mise à jour et la
+			communauté
+			particulièrement réactive
+		- Phrase sur le Beginner's Guide (TODO)
 
-## BSD etc
+## Gentoo (Advanced Users)
 
-**TODO** (ping wxcafe)
+- Est en rolling release aussi
+- Les outils sont integrés peu de temps après leur release
+- Compilation depuis les sources (emerge)
+	- Plus de controle sur le système et les logiciels
+	- Nécessite un materiel efficace (a ne pas installer sur un netbook)
+	- Améliore les performances (?) 
+
+# Des distributions BSD?
+
+## Melons et Pommes...
+
+- Des projets completement séparés
+	- Pas de partage du noyau, ni des outils
+	- Peu de portabilité
+	- Contributeurs différents, visions différentes
+- Beaucoup de forks...
+
+## No More Distros
+
+- Trois BSDs majeures :
+	Net, Free et Open
+- D'autres sont importantes : 
+	DragonFlyBSD, GhostBSD, ArchBSD
+- A noter : Debian GNU/kFreeBSD
+
+## NetBSD : La base
+
+- Première des majeures (1993)
+- Détachée de Berkeley depuis le début du projet
+- Centrée sur la stabilité et les performances
+
+## FreeBSD : La base, bis
+
+- Seconde des majeures, a quelques mois près (1993)
+- Toujours attachée a Berkeley 
+- Centrée sur la simplicité et la portabilité
+
+## OpenBSD :  
 
 # La console
 
@@ -157,19 +202,19 @@ TODO
 - ...de commandes entrées par l'utilisateur
 - Il lie l'utilisateur à sa machine
 
-## Sh
+## sh
 
 - TODO
 
-## Bash
+## bash
 
 - TODO
 
-## Csh
+## tcsh
 
 - TODO
 
-## Zsh
+## zsh
 
 - TODO
 
