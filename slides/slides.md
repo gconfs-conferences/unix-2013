@@ -342,8 +342,8 @@
 - Est en rolling release
 - Utilise `pacman` comme package manager
 - Les outils sont intégrés peu de temps après leur release
-	- Les users peuvent alors subir plus de bugs, cela n'empêche pas la
-		mise à jour régulière de la distro
+        - Les utilisateurs peuvent alors subir plus de bugs, cela n'empêche pas
+	  la mise à jour régulière de la distro
 		- Utilise systemd
 		- La documentation est régulièrement mise à jour (beginner's
           guide) et la
@@ -354,12 +354,13 @@
 
 - Est en rolling release aussi
 - Les outils sont integrés peu de temps après leur release
-- Compilation depuis les sources (emerge)
+- Compilation depuis les sources (portage)
 	- Plus de controle sur le système et les logiciels
-	- Nécessite un materiel efficace (a ne pas installer sur un netbook)
-	- Améliore les performances (?)
+        - Nécessite un materiel efficace (a ne pas installer tel quel sur un
+          netbook)
+        - Tout est opti pour le système utilisé -> meilleurs performances
 
-# Des distributions BSD?
+# BSD, un autre style de distribution
 
 ## Melons et Pommes...
 
@@ -388,7 +389,7 @@
 
 - Seconde des majeures, a quelques mois près (1993)
 - Toujours attachée a Berkeley
-- Utilise un système de ports, et pkgng pour les paquets 
+- Utilise un système de ports, et pkgng pour les paquets
 - Centrée sur la simplicité et la portabilité
 
 ## OpenBSD : La parano
@@ -411,7 +412,7 @@
 - PC-BSD (User-Friendly)
 	- FreeBSD, moins l'installation
 
-#Les autres Unix-like
+# Les autres Unix-like
 
 ## "Bon, il finit quand l'autre la haut...?"
 
@@ -560,13 +561,14 @@ systèmes existants -->
         - Ecrit par Chris Allegretta en 1999 afin de remplacer pico
         - Présent sur la plupart des systèmes UNIX-like
 
-##
-
-\begin{center}\includegraphics[scale=0.42]{ressources/manofsteel}\end{center}
-
 ## man
+
+man
+
+## man²
 
 man man
 
+##
 
-
+\begin{center}\includegraphics[scale=0.42]{ressources/manofsteel}\end{center}
