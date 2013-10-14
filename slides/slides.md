@@ -2,7 +2,8 @@
 
 ## Années 70
 
-- 1969 : Ken Thompson, Dennis Ritchie et Rob Pike commencent à travailler sur UNICS
+- 1969 : Ken Thompson, Dennis Ritchie et Rob Pike commencent à travailler sur
+  UNICS
 - 1973 : UNIX est réécrit en C
 - 1975 : Les Laboratoires Bell se décident à distribuer UNIX à l'extérieur.
 - 1977 : Bill Joy travaille sur la première version de BSD : 1BSD
