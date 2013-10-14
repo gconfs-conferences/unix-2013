@@ -42,6 +42,120 @@
 
 - Linux != OS
 
+# Un peu beaucoup de technique...
+
+## Le théorème de la mangue
+
+- Un noyau, un userspace = un OS
+- GNU/Linux ou Linux?
+
+## Un noyau, des pépins
+
+- Le lien entre le hardware et le software
+- Différents types de noyau :
+	- kernel monolithique (Linux, Unix...)
+	- microkernel (Minix, GNU Hurd)
+	- kernel hybride (Apple XNU, ...?)
+
+## l'userSPAAAAAAAAACE
+
+- Base d'un système
+- Standardisé (Posix, SUS)
+- La partie du système avec laquelle on interagit le plus
+
+## J'ai le droit, j'ai pas le droit...
+
+- Unix et les permissions, une histoire... complexe
+	- Le root
+- Système de permissions intégré au système
+- ACL, SELinux, ...?
+
+## chmod et chgrp sont dans un :bateau...
+
+- Du calcul mental!?
+- user, group, others, all.
+- read(4), write(2), execute(1)
+- maintenant, un peu de calcul...
+
+## De l'aspirix?
+
+700 -> u+rwx,g-rwx,o-rwx  
+755 -> u+rwx,g+rx,o+rx  
+644 -> u+rw,g+r,o+r  
+...
+
+## Les Access Control List
+
+- Controle des permissions en fonctions de rôles 
+- Spécification UNIX
+- Très peu utilisées même sur des systèmes sécurisés
+
+
+## SELinux
+
+- Permissions bien plus fines (liées a des rôles et a des attributs de fichiers) 
+- Peu utilisée dans une utilisation "normale"
+- Prévue pour les systèmes sécurisés
+
+## C:\\NOPE
+
+- Le système de fichier d'UNIX est complet : pas de
+	`C:\Documents%20and%20Settings\` ici
+- Des points de montage pour tout
+- *Tout* est fichier
+
+## ls -l /
+
+- La racine `/` contient tous les systèmes de fichiers
+- `mount` est la commande magique
+- `/dev` contient les fichiers spéciaux
+
+## Config de canard <!-- Oui, j'ai faim en faisant ces slides... -->
+
+- La configuration système se fait dans `/etc`
+- Un type de fichier "standard" : `conf` (basé sur du shell)
+- "Un standard respecté n'est pas un standard, c'est une facilité" <!-- chercher
+la citation exacte... -->
+
+## Apprendre a lacer ses boots
+
+- Le boot se passe en plusieurs étapes :
+	- Le BIOS (hors d'UNIX)
+	- Le bootloader (hors d'Unix)
+	- Le kernel (au coeur d'Unix)
+	- L'initramfs (optionnel, dans Unix)
+	- `init` (dans Unix)
+	- système booté (donc oui, c'est dans Unix...)
+
+## Les chaussures a scratch, ça existe aussi
+
+- `init` est le système de boot standard sous UNIX
+- Cependant, d'autres système existent :
+	- `rc` (principalement BSD)
+	- `upstart` (principalement ubuntu)
+	- `systemd` (uniquement linux, mais pas tous)
+- De grosses différences existent entre ces systèmes de boot...
+- ... Mais on ne va pas les expliquer ici.
+
+## Ça y est, c'est fini la technique?
+
+- La technique, c'est fini... et non.
+- Unix se découvre en étant utilisé, bien plus qu'en étant décrit
+- Bon courage!
+
+# Une philosophie...
+
+## Une philosophie, pour un Système d'exploitation!?
+
+- On parle pas de platon, mais de concepts de design
+- Tous les systèmes sont conçus comme ça, en écrivant avant de coder
+- Unix a une philosophie... assez spéciale.
+
+## 9 Tenets Majeurs
+
+- 
+
+
 # Bien choisir sa distribution
 
 ## "Distributions"?...
@@ -184,7 +298,101 @@
 - Toujours attachée a Berkeley 
 - Centrée sur la simplicité et la portabilité
 
-## OpenBSD :  
+## OpenBSD : La parano
+
+- Forkée de NetBSD (1995)
+- Très connue pour sa sécurité (ou sa paranoïa?)
+- A notamment donnée naissance a OpenSSH, OpenSSL, 
+	pf, tmux, spamd, etc...
+
+## Les mineures
+
+- DragonFlyBSD
+	- Forkée de FreeBSD, centrée sur la légèreté du système
+- ArchBSD
+	- Archlinux, avec une base FreeBSD
+- Debian GNU/kFreeBSD
+	- Projet debian, basé sur le système debian avec un noyau kfreebsd
+	- `sudo apt-get install kfreebsd-image-amd64`
+
+#Les autres Unix-like
+
+## "Bon, il finit quand l'autre la haut...?"
+
+- D'autres systèmes basés sur UNIX existent
+- Développés dans différents buts
+- Plus ou moins utilisables...
+- Mais on va les passer en revue (vite, ne vous inquietez pas)
+
+## Plan9 from Bell Labs
+
+- Évolution "officielle" d'Unix (venant de Bell Labs)
+- Énormément de nouveautés par rapport a Unix :
+	- Système orienté graphique
+	- Origine de ProcFS
+	- Origine de NetFS
+	- Créé avec une compatibilité unicode (au contraire de tous les systèmes
+	  actuels...)
+	- Origine d'UnionFS
+	- etc, etc, etc...
+
+## SunOS
+
+- Système développé par Sun Microsystems (1982 - 1992)
+- Basé sur BSD, lourdement modifié 
+	- Seul système a fonctionner sur SPARC a l'époque
+- a posé les bases de la collaboration entre entreprises pour des interfaces
+  standard (OpenWindows)
+
+## {,Open}Solaris
+
+- Basé sur Unix SysV, développé en collaboration par AT&T et Sun
+- Reste encore la référence sur archi SPARC
+- Connue pour supporter particulièrement bien les clusters de processeurs
+- Clairement orientée serveurs, mais suivant les standard, supporte Xorg
+- Projet enterré depuis le rachat de Sun par Oracle
+
+## GNU Hurd
+
+- Projet GNU depuis 1990, toujours en developpement (v0.XX) <!-- A checker -->
+- Remplacement du noyau Unix, en logiciel libre. 
+	- Du coup, alternative a Linux
+- Étend Unix autant que Plan9, du moins... dans les plans.
+
+## Darwin 
+
+- Système Open-Source 
+	- Composé d'un kernel XNU (hybride) et d'un userspace basé sur FreeBSD
+- Base de Mac OS X et d'iOS, qui rajoutent l'interface graphique
+- Plusieurs systèmes open-source basés dessus : OpenDarwin, PureDarwin...
+
+## Enfin, les autres ...
+
+- AIX (IBM)
+- BlackBerry 10
+- Android
+- Firefox OS
+- Haiku (posix compliant, clone de BeOS)
+
+## ... Et encore...
+
+- HP-UX
+- LynxOS
+- IRIX
+- Minix
+- NeXTStep
+
+## ... Et Toujours
+
+- QNX
+- Ultrix
+- WebOS
+- and much much more...
+
+<!-- Passer vite fait sur les trois slides précédent, en les énumérant. 
+Maximum une phrase sur chaque OS. Fait pour mettre l'emphase sur le nombre de
+systèmes existants -->
+
 
 # La console
 
