@@ -8,7 +8,7 @@
   l'exterieur.
 - 1977 : Bill Joy travaille sur la première version de BSD : 1BSD
 
-## 1983 
+## 1983
 
 - Richard Stallman annonce son intention de développer un système d'exploitation libre
       appelé GNU (GNU's not UNIX)
@@ -16,7 +16,7 @@
       d'UNIX
 
 
-## 1988 
+## 1988
 
 - Apparition du standard POSIX (Portable Operating System Interface
       for uniX)
@@ -32,7 +32,7 @@
 - Naissance du Noyau Linux
 	- Annonce sur comp.os.minix (Usenet) par Linus Torvalds
 	- Première release quelques mois plus tard
-	- Engouement pour le projet dès la première release 
+	- Engouement pour le projet dès la première release
 
 ## Précisions
 
@@ -79,21 +79,21 @@
 
 ## De l'aspirix?
 
-700 -> u+rwx,g-rwx,o-rwx  
-755 -> u+rwx,g+rx,o+rx  
-644 -> u+rw,g+r,o+r  
+700 -> u+rwx,g-rwx,o-rwx
+755 -> u+rwx,g+rx,o+rx
+644 -> u+rw,g+r,o+r
 ...
 
 ## Les Access Control List
 
-- Controle des permissions en fonctions de rôles 
+- Controle des permissions en fonctions de rôles
 - Spécification UNIX
 - Très peu utilisées même sur des systèmes sécurisés
 
 
 ## SELinux
 
-- Permissions bien plus fines (liées a des rôles et a des attributs de fichiers) 
+- Permissions bien plus fines (liées a des rôles et a des attributs de fichiers)
 - Peu utilisée dans une utilisation "normale"
 - Prévue pour les systèmes sécurisés
 
@@ -153,7 +153,7 @@ la citation exacte... -->
 
 ## 9 Tenets Majeurs
 
-- 
+-
 
 
 # Bien choisir sa distribution
@@ -162,7 +162,7 @@ la citation exacte... -->
 
 - Wtf is a distribution ?
     - Une distribution est un système d'exploitation basé sur GNU/Linux
-    - Le terme désigne l'écosystème qui entoure l'OS : 
+    - Le terme désigne l'écosystème qui entoure l'OS :
 		- le gestionnaire de paquet
 		- les outils spécifiques a la distribution
 		- les différences avec les standards
@@ -266,7 +266,7 @@ la citation exacte... -->
 - Compilation depuis les sources (emerge)
 	- Plus de controle sur le système et les logiciels
 	- Nécessite un materiel efficace (a ne pas installer sur un netbook)
-	- Améliore les performances (?) 
+	- Améliore les performances (?)
 
 # Des distributions BSD?
 
@@ -282,7 +282,7 @@ la citation exacte... -->
 
 - Trois BSDs majeures :
 	Net, Free et Open
-- D'autres sont importantes : 
+- D'autres sont importantes :
 	DragonFlyBSD, GhostBSD, ArchBSD
 - A noter : Debian GNU/kFreeBSD
 
@@ -295,14 +295,14 @@ la citation exacte... -->
 ## FreeBSD : La base, bis
 
 - Seconde des majeures, a quelques mois près (1993)
-- Toujours attachée a Berkeley 
+- Toujours attachée a Berkeley
 - Centrée sur la simplicité et la portabilité
 
 ## OpenBSD : La parano
 
 - Forkée de NetBSD (1995)
 - Très connue pour sa sécurité (ou sa paranoïa?)
-- A notamment donnée naissance a OpenSSH, OpenSSL, 
+- A notamment donnée naissance a OpenSSH, OpenSSL,
 	pf, tmux, spamd, etc...
 
 ## Les mineures
@@ -339,7 +339,7 @@ la citation exacte... -->
 ## SunOS
 
 - Système développé par Sun Microsystems (1982 - 1992)
-- Basé sur BSD, lourdement modifié 
+- Basé sur BSD, lourdement modifié
 	- Seul système a fonctionner sur SPARC a l'époque
 - a posé les bases de la collaboration entre entreprises pour des interfaces
   standard (OpenWindows)
@@ -355,13 +355,13 @@ la citation exacte... -->
 ## GNU Hurd
 
 - Projet GNU depuis 1990, toujours en developpement (v0.XX) <!-- A checker -->
-- Remplacement du noyau Unix, en logiciel libre. 
+- Remplacement du noyau Unix, en logiciel libre.
 	- Du coup, alternative a Linux
 - Étend Unix autant que Plan9, du moins... dans les plans.
 
-## Darwin 
+## Darwin
 
-- Système Open-Source 
+- Système Open-Source
 	- Composé d'un kernel XNU (hybride) et d'un userspace basé sur FreeBSD
 - Base de Mac OS X et d'iOS, qui rajoutent l'interface graphique
 - Plusieurs systèmes open-source basés dessus : OpenDarwin, PureDarwin...
@@ -389,7 +389,7 @@ la citation exacte... -->
 - WebOS
 - and much much more...
 
-<!-- Passer vite fait sur les trois slides précédent, en les énumérant. 
+<!-- Passer vite fait sur les trois slides précédent, en les énumérant.
 Maximum une phrase sur chaque OS. Fait pour mettre l'emphase sur le nombre de
 systèmes existants -->
 
@@ -427,7 +427,7 @@ TODO §
 
 ##
 
-\begin{center}\includegraphics[scale=0.42]{/home/bruce/conf-unix/ressources/manofsteel}\end{center}
+\begin{center}\includegraphics[scale=0.42]{ressources/manofsteel}\end{center}
 
 ## man
 
@@ -445,4 +445,4 @@ man man
             > chmod -R 777 /
 
 ##
-\begin{center}\includegraphics[scale=0.5]{/home/bruce/conf-unix/ressources/sandwich}\end{center}
+\begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
