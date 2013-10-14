@@ -4,35 +4,32 @@
 
 - 1969 : Ken Thompson, Dennis Ritchie et Rob Pike commencent à travailler sur UNICS
 - 1973 : UNIX est réécrit en C
-- 1975 : Les Laboratoires Bell se décident à distribuer UNIX à
-  l'extérieur.
+- 1975 : Les Laboratoires Bell se décident à distribuer UNIX à l'extérieur.
 - 1977 : Bill Joy travaille sur la première version de BSD : 1BSD
 
 ## 1983
 
-- Richard Stallman annonce son intention de développer un système d'exploitation libre
-      appelé GNU (GNU's not UNIX)
-- AT&T annonce la sortie de System V, première version véritablement propriétaire
-      d'UNIX
+- Richard Stallman annonce son intention de développer un système d'exploitation
+  libre appelé GNU (GNU's not UNIX)
+- AT&T annonce la sortie de System V, première version véritablement
+  propriétaire d'UNIX
 
 
 ## 1988
 
-- Apparition du standard POSIX (Portable Operating System Interface
-      for uniX)
+- Apparition du standard POSIX (Portable Operating System Interface for uniX)
     - Standardisation des différents systèmes basés sur UNIX.
-	- POSIX garantit la présence de signaux permettant la
-          gestion de processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL, etc...)
-	- ... mais aussi la présence de certains logiciels
-			quelque soit l'OS sur lequel ils sont utilisés
-          (ex : vi, ls, sh etc)
+        - POSIX garantit la présence de signaux permettant la gestion de
+          processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL, etc...)
+        - ... mais aussi la présence de certains logiciels quelque soit l'OS sur
+          lequel ils sont utilisés (ex : vi, ls, sh etc)
 
 ## 1991
 
 - Naissance du Noyau Linux
-	- Annonce sur comp.os.minix (Usenet) par Linus Torvalds
-	- Première release quelques mois plus tard
-	- Engouement pour le projet dès la première release
+    - Annonce sur comp.os.minix (Usenet) par Linus Torvalds
+    - Première release quelques mois plus tard
+    - Engouement pour le projet dès la première release
 
 ## Précisions
 
@@ -53,9 +50,9 @@
 
 - Le lien entre le hardware et le software
 - Différents types de noyau :
-	- kernel monolithique (Linux, Unix...)
-	- microkernel (Minix, GNU Hurd)
-	- kernel hybride (Apple XNU)
+    - kernel monolithique (Linux, Unix...)
+    - microkernel (Minix, GNU Hurd)
+    - kernel hybride (Apple XNU)
 
 ## l'userSPAAAAAAAAACE
 
@@ -66,7 +63,7 @@
 ## J'ai le droit, j'ai pas le droit...
 
 - Unix et les permissions, une histoire.. complexe
-	- Le root
+    - Le root
 - Système de permissions intégré au système
 - ACL, SELinux, ..?
 
@@ -98,9 +95,9 @@
 
 ## De l'aspirix?
 
-700 -> u+rwx,g-rwx,o-rwx  
-755 -> u+rwx,g+rx,o+rx  
-644 -> u+rw,g+r,o+r  
+700 -> u+rwx,g-rwx,o-rwx
+755 -> u+rwx,g+rx,o+rx
+644 -> u+rw,g+r,o+r
 ...
 
 ## Les Access Control List
@@ -119,7 +116,7 @@
 ## C:\\NOPE
 
 - Le système de fichier d'UNIX est complet : pas de
-	`C:\Documents%20and%20Settings\` ici
+  `C:\Documents%20and%20Settings\` ici
 - Des points de montage pour tout
 - *Tout* est fichier
 
@@ -133,36 +130,37 @@
 
 - La configuration système se fait dans `/etc`
 - Un type de fichier "standard" : `conf` (basé sur du shell)
-- "Un standard respecté n'est pas un standard, c'est une facilité" 
+- "Un standard respecté n'est pas un standard, c'est une facilité"
 
 ##
+
 \begin{center}\includegraphics[scale=0.5]{ressources/standards}\end{center}
 
 ## Apprendre a lacer ses boots
 
 - Le boot se passe en plusieurs étapes :
-	- Le BIOS (hors d'UNIX)
-	- Le bootloader (hors d'Unix)
-	- Le kernel (au coeur d'Unix)
-	- L'initramfs (optionnel, dans Unix)
-	- `init` (dans Unix)
-	- système booté (donc oui, c'est dans Unix...)
+    - Le BIOS (hors d'UNIX)
+    - Le bootloader (hors d'Unix)
+    - Le kernel (au coeur d'Unix)
+    - L'initramfs (optionnel, dans Unix)
+    - `init` (dans Unix)
+    - système booté (donc oui, c'est dans Unix...)
 
 ## Les chaussures a scratch, ça existe aussi
 
 - `init` est le système de boot standard sous UNIX
 - Cependant, d'autres système existent :
-	- `rc` (principalement BSD)
-	- `upstart` (principalement ubuntu)
-	- `systemd` (uniquement linux, mais pas tous)
+    - `rc` (principalement BSD)
+    - `upstart` (principalement ubuntu)
+    - `systemd` (uniquement linux, mais pas tous)
 - De grosses différences existent entre ces systèmes de boot...
 - ... Mais on ne va pas les expliquer ici
 
 ## Les modes de fonctionnement
 
 - Unix a plusieurs `runlevels`
-	- Controlent l'activation ou non des différentes fonctionnalités
-	- De fonctionalités **kernel**
+    - Controlent l'activation ou non des différentes fonctionnalités
+    - De fonctionalités **kernel**
 - On ne peut changer de runlevel qu'en tant que root
 - Certains runlevels peuvent être dangereux pour le système
 
@@ -171,22 +169,22 @@
 - Le runlevel 1 est dit "Single User", parce que seul root peut se logguer
 - En fait, il est loggué d'office
 - Pour passer en runlevel 1 sur les racks:
-	- Au prompt grub [FreeBSD, Windows, FreeBSD exam]
-		- taper `e` pour **e**diter la ligne de boot
-		- trouver la ligne commençant par `kernel`
-		- ajouter `-s` a la fin de celle-ci
-		- C-x
-	- Laisser le boot continuer, puis taper return quand on demande un shell
-	- `passwd`, `[votre mot de passe]`, `[votre mot de passe]`
+    - Au prompt grub [FreeBSD, Windows, FreeBSD exam]
+        - taper `e` pour **e**diter la ligne de boot
+        - trouver la ligne commençant par `kernel`
+        - ajouter `-s` a la fin de celle-ci
+        - C-x
+    - Laisser le boot continuer, puis taper return quand on demande un shell
+    - `passwd`, `[votre mot de passe]`, `[votre mot de passe]`
 - Profit!
 
 ## T'aurais pas une clope?
 
 - La gestion des logiciels sous Unix ne se fait pas comme sous Windows
 - La compilation directement depuis le code? Pas vraiment...
-	- Trop long (nécessite de récupérer le code, de l'installer a la main...)
-	- Trop complexe
-	- Trop couteux en ressources
+    - Trop long (nécessite de récupérer le code, de l'installer a la main...)
+    - Trop complexe
+    - Trop couteux en ressources
 - La plupart des systèmes Unix modernes ont un package manager
 
 ## Le tabagiste
@@ -227,8 +225,8 @@
 ## Et quelques tenets mineurs
 
 - Unix est orienté utilisateurs avancés
-	- Il prend comme acquis que ses utilisateurs savent ce qu'ils font
-	- Les utilisateurs novices ne sont pas aidés, en aucun cas
+    - Il prend comme acquis que ses utilisateurs savent ce qu'ils font
+    - Les utilisateurs novices ne sont pas aidés, en aucun cas
 
 - Unix est orienté texte
 
@@ -240,19 +238,18 @@
 - Wtf is a distribution ?
     - Une distribution est un système d'exploitation basé sur GNU/Linux
     - Le terme désigne l'écosystème qui entoure l'OS :
-		- le gestionnaire de paquet
-		- les outils spécifiques a la distribution
-		- les différences avec les standards
-		- etc....
+        - le gestionnaire de paquet
+        - les outils spécifiques a la distribution
+        - les différences avec les standards
+        - etc....
 
 ## Choisir sa distribution
 
 - Choisir sa distribution est primordial
-    - Un utilisateur n'aura pas la même experience suivant la
-      distribution :
-		- les procédés d'installation, de mise a jour, de gestion,... diffèrent
-		- l'état du système après une installation basique diffère
-		- la "cible" des distributions est différente
+    - Un utilisateur n'aura pas la même experience suivant la distribution :
+        - les procédés d'installation, de mise a jour, de gestion,... diffèrent
+        - l'état du système après une installation basique diffère
+        - la "cible" des distributions est différente
 
 - On peut distinguer trois types de distributions :
     - User friendly
@@ -271,8 +268,8 @@
 
 - Basée sur Ubuntu
     - Il existe aussi une version basée sur Debian Testing (LMDE)
-- Possède ses propres dépôts mais les utilisateurs ont aussi accès
-      aux dépôts Ubuntu (Debian dans le cas de LMDE)
+- Possède ses propres dépôts mais les utilisateurs ont aussi accès aux dépôts
+  Ubuntu (Debian dans le cas de LMDE)
 - Intègre de base des logiciels propriétaires (ex : flash player)
 
 ## elementary OS (User Friendly)
@@ -286,8 +283,7 @@
 
 - Basée sur Arch Linux
 - Est en rolling release
-- Beaucoup plus user friendly qu'Arch (de l'installation à
-  l'utilisation)
+- Beaucoup plus user friendly qu'Arch (de l'installation à l'utilisation)
 - Dépôts :
     - Propres à Manjaro
     - Arch Linux (avec un peu de retard)
@@ -319,12 +315,12 @@
 - Très stable, utilisée en entreprises et en production
 - Paquets vieux par rapport aux autres distributions
 - Le gestionnaire de paquets ne gère pas les dépendances
-	- Du coup, assez complexe a gerer et a installer
+    - Du coup, assez complexe a gerer et a installer
 
 ## RHEL (stable)
 
 - Maintenue par Red Hat
-- Utilise `yum`/`rpm` (Red Hat Package Manager) 
+- Utilise `yum`/`rpm` (Red Hat Package Manager)
 - Distribution commerciale
 - Paquêts un peu moins vieux que Debian
 - Utilise systemd
@@ -342,47 +338,44 @@
 - Est en rolling release
 - Utilise `pacman` comme package manager
 - Les outils sont intégrés peu de temps après leur release
-        - Les utilisateurs peuvent alors subir plus de bugs, cela n'empêche pas
-	  la mise à jour régulière de la distro
-		- Utilise systemd
-		- La documentation est régulièrement mise à jour (beginner's
-          guide) et la
-			communauté
-			particulièrement réactive
+    - Les utilisateurs peuvent alors subir plus de bugs, cela n'empêche pas la
+      mise à jour régulière de la distro
+        - Utilise systemd
+        - La documentation est régulièrement mise à jour (beginner's guide) et
+          la communauté particulièrement réactive
 
 ## Gentoo (Advanced Users)
 
 - Est en rolling release aussi
 - Les outils sont integrés peu de temps après leur release
 - Compilation depuis les sources (portage)
-	- Plus de controle sur le système et les logiciels
-        - Nécessite un materiel efficace (a ne pas installer tel quel sur un
-          netbook)
-        - Tout est opti pour le système utilisé -> meilleurs performances
+    - Plus de controle sur le système et les logiciels
+    - Nécessite un materiel efficace (a ne pas installer tel quel sur un
+      netbook)
+    - Tout est opti pour le système utilisé -> meilleurs performances
 
 # BSD, un autre style de distribution
 
 ## Melons et Pommes...
 
 - Des projets completement séparés
-	- Pas de partage du noyau, ni des outils
-	- Peu de portabilité
-	- Contributeurs différents, visions différentes
+    - Pas de partage du noyau, ni des outils
+    - Peu de portabilité
+    - Contributeurs différents, visions différentes
 - Beaucoup de forks...
 
 ## No More Distros
 
-- Trois BSDs majeures :
-	Net, Free et Open
-- D'autres sont importantes :
-	DragonFlyBSD, GhostBSD, ArchBSD
+- Trois BSDs majeures : Net, Free et Open
+- D'autres sont importantes : DragonFlyBSD, GhostBSD, ArchBSD
 - A noter : Debian GNU/kFreeBSD
 
 ## NetBSD : La base
 
 - Première des majeures (1993)
 - Détachée de Berkeley depuis le début du projet
-- Utilise pkgsrc, qui fait a la fois office de gestionnaire de ports et de paquets
+- Utilise pkgsrc, qui fait a la fois office de gestionnaire de ports et de
+  paquets
 - Centrée sur la stabilité et les performances
 
 ## FreeBSD : La base, bis
@@ -398,19 +391,19 @@
 - Très connue pour sa sécurité (ou sa paranoïa?)
 - Utilise un système de ports, et pkg\_add pour les paquets
 - A notamment donnée naissance a OpenSSH, OpenSSL,
-	pf, tmux, spamd, etc...
+  pf, tmux, spamd, etc...
 
 ## Les mineures
 
 - DragonFlyBSD
-	- Forkée de FreeBSD, centrée sur la légèreté du système
+    - Forkée de FreeBSD, centrée sur la légèreté du système
 - ArchBSD
-	- Archlinux, avec une base FreeBSD
+    - Archlinux, avec une base FreeBSD
 - Debian GNU/kFreeBSD
-	- Projet debian, basé sur le système debian avec un noyau kfreebsd
-	- `sudo apt-get install kfreebsd-image-amd64`
+    - Projet debian, basé sur le système debian avec un noyau kfreebsd
+    - `sudo apt-get install kfreebsd-image-amd64`
 - PC-BSD (User-Friendly)
-	- FreeBSD, moins l'installation
+    - FreeBSD, moins l'installation
 
 # Les autres Unix-like
 
@@ -425,19 +418,19 @@
 
 - Évolution "officielle" d'Unix (venant de Bell Labs)
 - Énormément de nouveautés par rapport a Unix :
-	- Système orienté graphique
-	- Origine de ProcFS
-	- Origine de NetFS
-	- Créé avec une compatibilité unicode (au contraire de tous les systèmes
-	  actuels...)
-	- Origine d'UnionFS
-	- etc, etc, etc...
+    - Système orienté graphique
+    - Origine de ProcFS
+    - Origine de NetFS
+    - Créé avec une compatibilité unicode (au contraire de tous les systèmes
+      actuels...)
+    - Origine d'UnionFS
+    - etc, etc, etc...
 
 ## SunOS
 
 - Système développé par Sun Microsystems (1982 - 1992)
 - Basé sur BSD, lourdement modifié
-	- Seul système a fonctionner sur SPARC a l'époque
+    - Seul système a fonctionner sur SPARC a l'époque
 - a posé les bases de la collaboration entre entreprises pour des interfaces
   standard (OpenWindows)
 
@@ -453,13 +446,13 @@
 
 - Projet GNU depuis 1990, toujours en developpement (v0XX) <!-- A checker -->
 - Remplacement du noyau Unix, en logiciel libre
-	- Du coup, alternative a Linux
+    - Du coup, alternative a Linux
 - Étend Unix autant que Plan9, du moins... dans les plans
 
 ## Darwin
 
 - Système Open-Source
-	- Composé d'un kernel XNU (hybride) et d'un userspace basé sur FreeBSD
+    - Composé d'un kernel XNU (hybride) et d'un userspace basé sur FreeBSD
 - Base de Mac OS X et d'iOS, qui rajoutent l'interface graphique
 - Plusieurs systèmes open-source basés dessus : OpenDarwin, PureDarwin...
 
@@ -515,10 +508,10 @@ systèmes existants -->
 
 - Deuxième "grand" shell Unix compatible bourne (Bourne Again Shell)
 - Très souvent le shell par défaut sur les unix modernes
-- Contient des features pratiques : 
-	- tab completion des commandes
-	- historique des commandes
-	- much more
+- Contient des features pratiques :
+    - tab completion des commandes
+    - historique des commandes
+    - much more
 
 ## ksh/pdksh
 
@@ -530,11 +523,11 @@ systèmes existants -->
 
 - Très grosse évolution de bash
 - Contient un grand nombre de features :
-	- tab completion pour tout (fichiers, dossiers, arguments...)
-	- "menus" navigables
-	- edition de commandes multi-lignes dans un seul buffer
-	- correction de frappe automatique
-	- [...]
+    - tab completion pour tout (fichiers, dossiers, arguments...)
+    - "menus" navigables
+    - edition de commandes multi-lignes dans un seul buffer
+    - correction de frappe automatique
+    - [...]
 
 ## csh et tcsh
 
@@ -550,13 +543,13 @@ systèmes existants -->
   sytème via des commandes.
 
 - On peut aussi opérer sur des fichiers et/ou dossiers :
-    mkdir, cd, cp, mv, rm, ln
+  mkdir, cd, cp, mv, rm, ln
 
 - Les fichiers peuvent être édités en console grâce à des éditeurs :
     - vi
         - Ecrit par Bill Joy en 1976
-        - Est présent sur tous les systèmes UNIX (depuis la version 3 de
-          la Single Unix Specification).
+        - Est présent sur tous les systèmes UNIX (depuis la version 3 de la
+          Single Unix Specification).
     - GNU nano
         - Ecrit par Chris Allegretta en 1999 afin de remplacer pico
         - Présent sur la plupart des systèmes UNIX-like
@@ -569,6 +562,6 @@ man
 
 man man
 
-##
+## man man man
 
 \begin{center}\includegraphics[scale=0.42]{ressources/manofsteel}\end{center}
