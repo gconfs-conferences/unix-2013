@@ -2,10 +2,10 @@
 
 ## Années 70
 
-- 1969 : Ken Thompson, Dennis Ritchie et Rob Pike commencent à travailler sur UNICS.
-- 1973 : UNIX est réécrit en C.
+- 1969 : Ken Thompson, Dennis Ritchie et Rob Pike commencent à travailler sur UNICS
+- 1973 : UNIX est réécrit en C
 - 1975 : Les Laboratoires Bell se décident à distribuer UNIX à
-  l'exterieur.
+  l'extérieur.
 - 1977 : Bill Joy travaille sur la première version de BSD : 1BSD
 
 ## 1983
@@ -22,12 +22,12 @@
       for uniX)
     - Standardisation des différents systèmes basés sur UNIX.
 	- POSIX garantit la présence de signaux permettant la
-          gestion de processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL etc..)
+          gestion de processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL, etc...)
 	- ... mais aussi la présence de certains logiciels
-          quelques soient les OS sur les quels ils sont utilisés
+			quelque soit l'OS sur lequel ils sont utilisés
           (ex : vi, ls, sh etc)
 
-## 1991 :
+## 1991
 
 - Naissance du Noyau Linux
 	- Annonce sur comp.os.minix (Usenet) par Linus Torvalds
@@ -46,7 +46,7 @@
 
 ## Le théorème de la mangue
 
-- Un noyau, un userspace = un OS
+- Un noyau + un userspace = un OS
 - GNU/Linux ou Linux?
 
 ## Un noyau, des pépins
@@ -55,7 +55,7 @@
 - Différents types de noyau :
 	- kernel monolithique (Linux, Unix...)
 	- microkernel (Minix, GNU Hurd)
-	- kernel hybride (Apple XNU, ...?)
+	- kernel hybride (Apple XNU)
 
 ## l'userSPAAAAAAAAACE
 
@@ -65,10 +65,10 @@
 
 ## J'ai le droit, j'ai pas le droit...
 
-- Unix et les permissions, une histoire... complexe
+- Unix et les permissions, une histoire.. complexe
 	- Le root
 - Système de permissions intégré au système
-- ACL, SELinux, ...?
+- ACL, SELinux, ..?
 
 ## got root ?
 
@@ -92,7 +92,7 @@
 ## chmod et chgrp sont dans un :bateau...
 
 - Du calcul mental!?
-- user, group, others, all.
+- user, group, others, all
 - read(4), write(2), execute(1)
 - maintenant, un peu de calcul...
 
@@ -156,7 +156,7 @@
 	- `upstart` (principalement ubuntu)
 	- `systemd` (uniquement linux, mais pas tous)
 - De grosses différences existent entre ces systèmes de boot...
-- ... Mais on ne va pas les expliquer ici.
+- ... Mais on ne va pas les expliquer ici
 
 ## Les modes de fonctionnement
 
@@ -183,8 +183,8 @@
 ## T'aurais pas une clope?
 
 - La gestion des logiciels sous Unix ne se fait pas comme sous Windows
-- La compilation directement depuis le code? Pas vraiment
-	- Trop long
+- La compilation directement depuis le code? Pas vraiment...
+	- Trop long (nécessite de récupérer le code, de l'installer a la main...)
 	- Trop complexe
 	- Trop couteux en ressources
 - La plupart des systèmes Unix modernes ont un package manager
@@ -192,27 +192,12 @@
 ## Le tabagiste
 
 - Un package manager permet d'installer facilement des logiciels
-- Ils sont conçus en ligne de commande, mais ont souvent une GUI
+- Ils sont conçus pour la ligne de commande, mais ont souvent une GUI
 - Dépendent de la distribution
-
-## Marlboro, Lucky Strike, Camel?
-
-- apt/dpkg :
-	- package manager de debian
-	- utilise des .deb
-	- écrit en C++/Perl
-- yum/rpm :
-	- issu de Red Hat (Red hat Package Manager)
-	- package manager "standard" (Linux Standard Base)
-	- écrit en C/Perl
-- pacman : 
-	- package manager d'archlinux
-	- écrit pour archlinux en C
-	- très rapide et efficace
 
 ## Ça y est, c'est fini la technique?
 
-- La technique, c'est fini... et non.
+- La technique, c'est fini... et non
 - Unix se découvre en étant utilisé, bien plus qu'en étant décrit
 - Bon courage!
 
@@ -222,7 +207,7 @@
 
 - On parle pas de platon, mais de concepts de design
 - Tous les systèmes sont conçus comme ça, en écrivant avant de coder
-- Unix a une philosophie... assez spéciale.
+- Unix a une philosophie... assez spéciale
 
 ## 9 Tenets Majeurs
 
@@ -239,6 +224,14 @@
 - Avoid captive user interfaces
 - Make every program a filter
 
+## Et quelques tenets mineurs
+
+- Unix est orienté utilisateurs avancés
+	- Il prend comme acquis que ses utilisateurs savent ce qu'ils font
+	- Les utilisateurs novices ne sont pas aidés, en aucun cas
+
+- Unix est orienté texte
+
 
 # Bien choisir sa distribution
 
@@ -250,12 +243,12 @@
 		- le gestionnaire de paquet
 		- les outils spécifiques a la distribution
 		- les différences avec les standards
-		- etc...
+		- etc....
 
 ## Choisir sa distribution
 
 - Choisir sa distribution est primordial
-    - Un utilisateur n'aura pas la mème experience suivant la
+    - Un utilisateur n'aura pas la même experience suivant la
       distribution :
 		- les procédés d'installation, de mise a jour, de gestion,... diffèrent
 		- l'état du système après une installation basique diffère
@@ -304,7 +297,6 @@
 
 - Maintenue par une communauté très active
 - Distribution assez ancienne, basée sur Red Hat
-- Utilise le package manager yum/rpm ( != apt/dpkg de debian/ubuntu)
 - Globalement simple d'utilisation
 - Souvent assez en avance sur Ubuntu en terme de mises a jour
 
@@ -313,37 +305,42 @@
 - Maintenue par la communauté
 - Principale "concurrente" de Fedora
 - Interface d'administration graphique YaST
-- Utilise le package manager zypper/rpm
 
 ## Debian (stable)
 
-- Très stable
+- **Très** stable
+- Utilise `apt`/`dpkg` comme package manager
 - Developpée par des bénévoles issus de la communauté Debian
 - Contrat Social Debian, très important pour le projet
 - Paquets plutôt vieux par rapport aux autres distributions
 
 ## Slackware (stable)
 
-- Très stable
+- Très stable, utilisée en entreprises et en production
 - Paquets vieux par rapport aux autres distributions
 - Le gestionnaire de paquets ne gère pas les dépendances
 	- Du coup, assez complexe a gerer et a installer
 
 ## RHEL (stable)
 
-- Maintenue par Red hat
+- Maintenue par Red Hat
+- Utilise `yum`/`rpm` (Red Hat Package Manager) 
+- Distribution commerciale
 - Paquêts un peu moins vieux que Debian
 - Utilise systemd
-- Assez proche de Fedora
+- Base de Fedora
 
 ## SUSE entreprise (stable)
 
 - Orientée business (comme RHEL)
+- Utilise `zypper` (basé sur `rpm`) comme package manager
+- Ressemble beaucoup a RHEL, mais est plus orientée workstations que serveurs
 - Il existe une version gratuite et communautaire : OpenSUSE
 
 ## Arch Linux (Advanced Users)
 
 - Est en rolling release
+- Utilise `pacman` comme package manager
 - Les outils sont intégrés peu de temps après leur release
 	- Les users peuvent alors subir plus de bugs, cela n'empêche pas la
 		mise à jour régulière de la distro
@@ -384,18 +381,21 @@
 
 - Première des majeures (1993)
 - Détachée de Berkeley depuis le début du projet
+- Utilise pkgsrc, qui fait a la fois office de gestionnaire de ports et de paquets
 - Centrée sur la stabilité et les performances
 
 ## FreeBSD : La base, bis
 
 - Seconde des majeures, a quelques mois près (1993)
 - Toujours attachée a Berkeley
+- Utilise un système de ports, et pkgng pour les paquets 
 - Centrée sur la simplicité et la portabilité
 
 ## OpenBSD : La parano
 
 - Forkée de NetBSD (1995)
 - Très connue pour sa sécurité (ou sa paranoïa?)
+- Utilise un système de ports, et pkg\_add pour les paquets
 - A notamment donnée naissance a OpenSSH, OpenSSL,
 	pf, tmux, spamd, etc...
 
@@ -450,10 +450,10 @@
 
 ## GNU Hurd
 
-- Projet GNU depuis 1990, toujours en developpement (v0.XX) <!-- A checker -->
-- Remplacement du noyau Unix, en logiciel libre.
+- Projet GNU depuis 1990, toujours en developpement (v0XX) <!-- A checker -->
+- Remplacement du noyau Unix, en logiciel libre
 	- Du coup, alternative a Linux
-- Étend Unix autant que Plan9, du moins... dans les plans.
+- Étend Unix autant que Plan9, du moins... dans les plans
 
 ## Darwin
 
@@ -494,13 +494,52 @@ systèmes existants -->
 
 ## wtf is a terminal ?
 
-TODO §
+- Un terminal est une émulation de teletype (TTY)
+- Il permet d'interagir avec le système en mode texte
+- Le terminal contient un `shell`, auquel on donne des commandes
 
 ## Le shell
 
-- C'est un interpréteur
-- ...de commandes entrées par l'utilisateur
-- Il lie l'utilisateur à sa machine
+- Le shell est un interpréteur de commandes **et** un langage de scripts
+- Il permet a l'utilisateur de diriger directement sa machine
+- Il en existe plusieurs, assez différents
+
+## sh
+
+- Le `sh` originel (Bourne Shell), écrit par Stephen Bourne (AT&T)
+- Standardisé dans Posix
+- Assez limité de nos jours, mais impressionnant pour 1977
+
+## bash
+
+- Deuxième "grand" shell Unix compatible bourne (Bourne Again Shell)
+- Très souvent le shell par défaut sur les unix modernes
+- Contient des features pratiques : 
+	- tab completion des commandes
+	- historique des commandes
+	- much more
+
+## ksh/pdksh
+
+- Évolution assez importante de bash
+- Créé par Sun (Korn Shell), réécrit par OpenBSD (Public Domain Korn Shell)
+- Assez peu utilisée, car contient des extensions non-standard
+
+## zsh
+
+- Très grosse évolution de bash
+- Contient un grand nombre de features :
+	- tab completion pour tout (fichiers, dossiers, arguments...)
+	- "menus" navigables
+	- edition de commandes multi-lignes dans un seul buffer
+	- correction de frappe automatique
+	- [...]
+
+## csh et tcsh
+
+- Écrit pour 2BSD, par Bill Joy
+- Syntaxe de script beaucoup plus proche du C
+- Globalement plus de features que bourne shell, mais moins que bash
 
 # Les commandes
 
