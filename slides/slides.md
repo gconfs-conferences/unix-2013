@@ -96,9 +96,9 @@
 
 ## De l'aspirix?
 
-700 -> u+rwx,g-rwx,o-rwx
-755 -> u+rwx,g+rx,o+rx
-644 -> u+rw,g+r,o+r
+700 -> u+rwx,g-rwx,o-rwx\newline
+755 -> u+rwx,g+rx,o+rx\newline
+644 -> u+rw,g+r,o+r\newline
 ...
 
 ## Les Access Control List
