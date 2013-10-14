@@ -70,6 +70,25 @@
 - Système de permissions intégré au système
 - ACL, SELinux, ...?
 
+## got root ?
+
+- Qui est root ?
+    - Le premier utilisateur sur un système d'exploitation
+    - Il a **tous** les droits :
+        - Il est donc préférable de ne se connecter en root que pour
+          effectuer des opérations de maintenance (ou pas)
+        - "With great power comes great responsibility"
+        - `chmod -R 777 /`
+
+## sudo
+
+- `sudo` (superuser do) est un projet originaire d'OpenBSD
+- Améliore la sécurité du système : pas besoin d'utiliser le root
+- Simplifie l'administration du système
+
+##
+\begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
+
 ## chmod et chgrp sont dans un :bateau...
 
 - Du calcul mental!?
@@ -79,9 +98,9 @@
 
 ## De l'aspirix?
 
-700 -> u+rwx,g-rwx,o-rwx
-755 -> u+rwx,g+rx,o+rx
-644 -> u+rw,g+r,o+r
+700 -> u+rwx,g-rwx,o-rwx  
+755 -> u+rwx,g+rx,o+rx  
+644 -> u+rw,g+r,o+r  
 ...
 
 ## Les Access Control List
@@ -114,8 +133,10 @@
 
 - La configuration système se fait dans `/etc`
 - Un type de fichier "standard" : `conf` (basé sur du shell)
-- "Un standard respecté n'est pas un standard, c'est une facilité" <!-- chercher
-la citation exacte... -->
+- "Un standard respecté n'est pas un standard, c'est une facilité" 
+
+##
+\begin{center}\includegraphics[scale=0.5]{ressources/standards}\end{center}
 
 ## Apprendre a lacer ses boots
 
@@ -137,6 +158,58 @@ la citation exacte... -->
 - De grosses différences existent entre ces systèmes de boot...
 - ... Mais on ne va pas les expliquer ici.
 
+## Les modes de fonctionnement
+
+- Unix a plusieurs `runlevels`
+	- Controlent l'activation ou non des différentes fonctionnalités
+	- De fonctionalités **kernel**
+- On ne peut changer de runlevel qu'en tant que root
+- Certains runlevels peuvent être dangereux pour le système
+
+## Le root sur le rack
+
+- Le runlevel 1 est dit "Single User", parce que seul root peut se logguer
+- En fait, il est loggué d'office
+- Pour passer en runlevel 1 sur les racks:
+	- Au prompt grub [FreeBSD, Windows, FreeBSD exam]
+		- taper `e` pour **e**diter la ligne de boot
+		- trouver la ligne commençant par `kernel`
+		- ajouter `-s` a la fin de celle-ci
+		- C-x
+	- Laisser le boot continuer, puis taper return quand on demande un shell
+	- `passwd`, `[votre mot de passe]`, `[votre mot de passe]`
+- Profit!
+
+## T'aurais pas une clope?
+
+- La gestion des logiciels sous Unix ne se fait pas comme sous Windows
+- La compilation directement depuis le code? Pas vraiment
+	- Trop long
+	- Trop complexe
+	- Trop couteux en ressources
+- La plupart des systèmes Unix modernes ont un package manager
+
+## Le tabagiste
+
+- Un package manager permet d'installer facilement des logiciels
+- Ils sont conçus en ligne de commande, mais ont souvent une GUI
+- Dépendent de la distribution
+
+## Marlboro, Lucky Strike, Camel?
+
+- apt/dpkg :
+	- package manager de debian
+	- utilise des .deb
+	- écrit en C++/Perl
+- yum/rpm :
+	- issu de Red Hat (Red hat Package Manager)
+	- package manager "standard" (Linux Standard Base)
+	- écrit en C/Perl
+- pacman : 
+	- package manager d'archlinux
+	- écrit pour archlinux en C
+	- très rapide et efficace
+
 ## Ça y est, c'est fini la technique?
 
 - La technique, c'est fini... et non.
@@ -153,7 +226,18 @@ la citation exacte... -->
 
 ## 9 Tenets Majeurs
 
--
+- Small is beautiful
+- Make each program do one thing well
+- Build a prototype as soon as possible
+- Choose portability over efficiency
+- Store data in flat text files
+
+## 9 Tenets Majeurs
+
+- Use software leverage to your advantage
+- Use shell scripts to increase leverage and portability
+- Avoid captive user interfaces
+- Make every program a filter
 
 
 # Bien choisir sa distribution
@@ -216,16 +300,26 @@ la citation exacte... -->
     - Arch Linux (avec un peu de retard)
     - AUR
 
-## PC-BSD (User Friendly)
+## Fedora (User Friendly)
 
-- Basée sur freeBSD
-- Procédure d'installation très simplifiée avec beaucoup de logiciels
-  préinstallés
+- Maintenue par une communauté très active
+- Distribution assez ancienne, basée sur Red Hat
+- Utilise le package manager yum/rpm ( != apt/dpkg de debian/ubuntu)
+- Globalement simple d'utilisation
+- Souvent assez en avance sur Ubuntu en terme de mises a jour
+
+## OpenSUSE (User Friendly)
+
+- Maintenue par la communauté
+- Principale "concurrente" de Fedora
+- Interface d'administration graphique YaST
+- Utilise le package manager zypper/rpm
 
 ## Debian (stable)
 
 - Très stable
 - Developpée par des bénévoles issus de la communauté Debian
+- Contrat Social Debian, très important pour le projet
 - Paquets plutôt vieux par rapport aux autres distributions
 
 ## Slackware (stable)
@@ -233,7 +327,7 @@ la citation exacte... -->
 - Très stable
 - Paquets vieux par rapport aux autres distributions
 - Le gestionnaire de paquets ne gère pas les dépendances
-
+	- Du coup, assez complexe a gerer et a installer
 
 ## RHEL (stable)
 
@@ -314,6 +408,8 @@ la citation exacte... -->
 - Debian GNU/kFreeBSD
 	- Projet debian, basé sur le système debian avec un noyau kfreebsd
 	- `sudo apt-get install kfreebsd-image-amd64`
+- PC-BSD (User-Friendly)
+	- FreeBSD, moins l'installation
 
 #Les autres Unix-like
 
@@ -434,15 +530,4 @@ TODO §
 man man
 
 
-## got root ?
 
-- Qui est root ?
-    - Le premier utilisateur sur un système d'exploitation
-    - Il a **tous** les droits :
-        - Il est donc préférable de ne se connecter en root que pour
-          effectuer des opérations de maintenance.
-        - "With great power comes great responsibility"\newline
-            > chmod -R 777 /
-
-##
-\begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
