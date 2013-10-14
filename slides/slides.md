@@ -565,7 +565,7 @@ systèmes existants -->
 
 man
 
-## man²
+## man man
 
 man man
 
