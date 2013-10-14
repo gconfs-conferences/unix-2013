@@ -254,10 +254,10 @@ la citation exacte... -->
 	- Les users peuvent alors subir plus de bugs, cela n'empêche pas la
 		mise à jour régulière de la distro
 		- Utilise systemd
-		- La documentation est régulièrement mise à jour et la
+		- La documentation est régulièrement mise à jour (beginner's
+          guide) et la
 			communauté
 			particulièrement réactive
-		- Phrase sur le Beginner's Guide (TODO)
 
 ## Gentoo (Advanced Users)
 
@@ -394,33 +394,17 @@ Maximum une phrase sur chaque OS. Fait pour mettre l'emphase sur le nombre de
 systèmes existants -->
 
 
-# La console
+# Terminal ?
 
-## La console
+## wtf is a terminal ?
 
-TODO
+TODO §
 
 ## Le shell
 
 - C'est un interpréteur
 - ...de commandes entrées par l'utilisateur
 - Il lie l'utilisateur à sa machine
-
-## sh
-
-- TODO
-
-## bash
-
-- TODO
-
-## tcsh
-
-- TODO
-
-## zsh
-
-- TODO
 
 # Les commandes
 
@@ -455,9 +439,8 @@ man man
 - Qui est root ?
     - Le premier utilisateur sur un système d'exploitation
     - Il a **tous** les droits :
-        - Il est donc préférable de ne pas se connecter en root sur son
-          système (sauf pour des opérations de maintenance ... et
-          encore)
+        - Il est donc préférable de ne se connecter en root que pour
+          effectuer des opérations de maintenance.
         - "With great power comes great responsibility"\newline
             > chmod -R 777 /
 
