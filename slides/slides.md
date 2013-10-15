@@ -38,169 +38,7 @@
     - UNIX compliant
     - UNIX-like
 
-- Linux != OS
-
 # Les concepts importants
-
-## Un peu beaucoup de technique...
-
-### Le théorème de la mangue
-
-- Un noyau + un userspace = un OS
-- GNU/Linux ou Linux?
-
-### Un noyau, des pépins
-
-- Le lien entre le hardware et le software
-- Différents types de noyau :
-    - kernel monolithique (Linux, Unix...)
-    - microkernel (Minix, GNU Hurd)
-    - kernel hybride (Apple XNU)
-
-### l'userSPAAAAAAAAACE
-
-- Base d'un système
-- Standardisé (Posix, SUS)
-- La partie du système avec laquelle on interagit le plus
-
-### J'ai le droit, j'ai pas le droit...
-
-- Unix et les permissions, une histoire.. complexe
-    - Le root
-- Système de permissions intégré au système
-- ACL, SELinux, ..?
-
-### got root ?
-
-- Qui est root ?
-    - Le premier utilisateur sur un système d'exploitation
-    - Il a **tous** les droits :
-        - Il est donc préférable de ne se connecter en root que pour
-          effectuer des opérations de maintenance (ou pas)
-        - "With great power comes great responsibility"
-        - `chmod -R 777 /`
-
-### sudo
-
-- `sudo` (superuser do) est un projet originaire d'OpenBSD
-- Améliore la sécurité du système : pas besoin d'utiliser le root
-- Simplifie l'administration du système
-
-###
-\begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
-
-### chown et chgrp sont dans un :bateau...
-
-- Du calcul mental!?
-- user, group, others, all
-- read(4), write(2), execute(1)
-- maintenant, un peu de calcul...
-
-### De l'aspirix?
-
-700 -> u+rwx,g-rwx,o-rwx\newline
-755 -> u+rwx,g+rx,o+rx\newline
-644 -> u+rw,g+r,o+r\newline
-...
-
-### Les Access Control List
-
-- Controle des permissions en fonctions de rôles
-- Spécification UNIX
-- Très peu utilisées même sur des systèmes sécurisés
-
-
-### SELinux
-
-- Permissions bien plus fines (liées a des rôles et a des attributs de fichiers)
-- Peu utilisée dans une utilisation "normale"
-- Prévue pour les systèmes sécurisés
-
-### C:\\NOPE
-
-- Le système de fichier d'UNIX est complet : pas de
-  `C:\Documents%20and%20Settings\` ici
-- Des points de montage pour tout
-- *Tout* est fichier
-
-### ls -l /
-
-- La racine `/` contient tous les systèmes de fichiers
-- `mount` est la commande magique
-- `/dev` contient les fichiers spéciaux
-
-### Config de canard <!-- Oui, j'ai faim en faisant ces slides... -->
-
-- La configuration système se fait dans `/etc`
-- Un type de fichier "standard" : `conf` (basé sur du shell)
-- "Un standard respecté n'est pas un standard, c'est une facilité"
-
-###
-
-\begin{center}\includegraphics[scale=0.5]{ressources/standards}\end{center}
-
-### Apprendre a lacer ses boots
-
-- Le boot se passe en plusieurs étapes :
-    - Le BIOS (hors d'UNIX)
-    - Le bootloader (hors d'Unix)
-    - Le kernel (au coeur d'Unix)
-    - L'initramfs (optionnel, dans Unix)
-    - `init` (dans Unix)
-    - système booté (donc oui, c'est dans Unix...)
-
-### Les chaussures a scratch, ça existe aussi
-
-- `init` est le système de boot standard sous UNIX
-- Cependant, d'autres système existent :
-    - `rc` (principalement BSD)
-    - `upstart` (principalement ubuntu)
-    - `systemd` (uniquement linux, mais pas tous)
-- De grosses différences existent entre ces systèmes de boot...
-- ... Mais on ne va pas les expliquer ici
-
-### Les modes de fonctionnement
-
-- Unix a plusieurs `runlevels`
-    - Controlent l'activation ou non des différentes fonctionnalités
-    - De fonctionalités **kernel**
-- On ne peut changer de runlevel qu'en tant que root
-- Certains runlevels peuvent être dangereux pour le système
-
-### Le root sur le rack
-
-- Le runlevel 1 est dit "Single User", parce que seul root peut se logguer
-- En fait, il est loggué d'office
-- Pour passer en runlevel 1 sur les racks:
-    - Au prompt grub [FreeBSD, Windows, FreeBSD exam]
-        - taper `e` pour **e**diter la ligne de boot
-        - trouver la ligne commençant par `kernel`
-        - ajouter `-s` a la fin de celle-ci
-        - C-x
-    - Laisser le boot continuer, puis taper return quand on demande un shell
-    - `passwd`, `[votre mot de passe]`, `[votre mot de passe]`
-- Profit!
-
-### T'aurais pas une clope?
-
-- La gestion des logiciels sous Unix ne se fait pas comme sous Windows
-- La compilation directement depuis le code? Pas vraiment...
-    - Trop long (nécessite de récupérer le code, de l'installer a la main...)
-    - Trop complexe
-    - Trop couteux en ressources
-- La plupart des systèmes Unix modernes ont un package manager
-
-### Le tabagiste
-
-- Un package manager permet d'installer facilement des logiciels
-- Ils sont conçus pour la ligne de commande, mais ont souvent une GUI
-- Dépendent de la distribution
-
-### Ça y est, c'est fini la technique?
-
-- La technique, c'est fini... et non
-- Unix se découvre en étant utilisé, bien plus qu'en étant décrit
-- Bon courage!
 
 ## Une philosophie...
 
@@ -233,6 +71,138 @@
 
 - Unix est orienté texte
 
+## Un peu beaucoup de technique...
+
+### Le théorème de la mangue
+
+- Un noyau + un userspace = un OS
+- GNU/Linux ou Linux?
+
+### Un noyau, des pépins
+
+- Le lien entre le hardware et le software
+- Différents types de noyau :
+    - kernel monolithique (Linux, Unix...)
+    - microkernel (Minix, GNU Hurd)
+    - kernel hybride (Apple XNU)
+
+### l'userSPAAAAAAAAACE
+
+- Base d'un système
+- Standardisé (Posix, SUS)
+- La partie du système avec laquelle on interagit le plus
+
+### got root ?
+
+- Qui est root ?
+    - Le premier utilisateur sur un système d'exploitation
+    - Il a **tous** les droits :
+        - Il est donc préférable de ne se connecter en root que pour
+          effectuer des opérations de maintenance (ou pas)
+        - "With great power comes great responsibility"
+        - `chmod -R 777 /`
+
+### sudo
+
+- `sudo` (superuser do) est un projet originaire d'OpenBSD
+- Améliore la sécurité du système : pas besoin d'utiliser le root
+- Simplifie l'administration du système
+
+### J'ai le droit, j'ai pas le droit...
+
+- Unix et les permissions, une histoire.. complexe
+    - Le root
+- Système de permissions intégré au système
+- ACL, SELinux, ..?
+
+###
+\begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
+
+### chown et chgrp sont dans un :bateau...
+
+- Du calcul mental!?
+- user, group, others, all
+- read(4), write(2), execute(1)
+- maintenant, un peu de calcul...
+
+### De l'aspirix?
+
+700 -> u+rwx,g-rwx,o-rwx\newline
+755 -> u+rwx,g+rx,o+rx\newline
+644 -> u+rw,g+r,o+r\newline
+...
+
+### ls -l /
+
+- La racine `/` contient tous les systèmes de fichiers
+- `mount` est la commande magique
+- `/dev` contient les fichiers spéciaux
+
+### C:\\NOPE
+
+- Le système de fichier d'UNIX est complet : pas de
+  `C:\Documents%20and%20Settings\` ici
+- Des points de montage pour tout
+- *Tout* est fichier
+
+### Config de canard <!-- Oui, j'ai faim en faisant ces slides... -->
+
+- La configuration système se fait dans `/etc`
+- Un type de fichier "standard" : `conf` (basé sur du shell)
+- Standard, parfois.
+
+###
+
+\begin{center}\includegraphics[scale=0.5]{ressources/standards}\end{center}
+
+### Apprendre a lacer ses boots
+
+- Le boot se passe en plusieurs étapes :
+    - Le BIOS (hors d'UNIX)
+    - Le bootloader (hors d'Unix)
+    - Le kernel (au coeur d'Unix)
+    - `init` (dans Unix)
+    - système booté (donc oui, c'est dans Unix...)
+
+### Les chaussures a scratch, ça existe aussi
+
+- `init` est le système de boot standard sous UNIX
+- Cependant, d'autres système existent :
+    - `rc` (principalement BSD)
+    - `upstart` (principalement ubuntu)
+    - `systemd` (uniquement linux, mais pas tous)
+- De grosses différences existent entre ces systèmes de boot...
+- ... Mais on ne va pas les expliquer ici
+
+### Les modes de fonctionnement
+
+- Unix a plusieurs `runlevels`
+    - Controlent l'activation ou non des différentes fonctionnalités
+    - De fonctionalités **kernel**
+- On ne peut changer de runlevel qu'en tant que root
+- Certains runlevels peuvent être dangereux pour le système
+
+### T'aurais pas une clope?
+
+- La gestion des logiciels sous Unix ne se fait pas comme sous Windows
+- La compilation directement depuis le code? Pas vraiment...
+    - Trop long (nécessite de récupérer le code, de l'installer a la main...)
+    - Trop complexe
+    - Trop couteux en ressources
+- La plupart des systèmes Unix modernes ont un package manager
+
+### Le tabagiste
+
+- Un package manager permet d'installer facilement des logiciels
+- Ils sont conçus pour la ligne de commande, mais ont souvent une GUI
+- Ils dépendent de la distribution
+
+### Ça y est, c'est fini la technique?
+
+- La technique, c'est fini... et non
+- Unix se découvre en étant utilisé, bien plus qu'en étant décrit
+- Bon courage!
+
 
 # Bien choisir son système
 
@@ -246,6 +216,7 @@
         - le gestionnaire de paquet
         - les outils spécifiques a la distribution
         - les différences avec les standards
+        - le système d'init
         - etc....
 
 ### Choisir sa distribution
@@ -281,7 +252,7 @@
 
 - Basée sur Ubuntu
 - Possède ses propres dépôts
-- Interface simpliste (avec quelques ressemblances à OS X)
+- Interface simpliste (d'énormes ressemblances à OS X)
 - Intègre de base des logiciels et drivers propriétaires (comme Mint)
 
 ### Manjaro Linux (User Friendly)
