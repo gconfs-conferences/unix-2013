@@ -2,6 +2,7 @@ slides.pdf: slides/slides.md
 	pandoc -t beamer \
 	    slides/slides.md \
 	    --include-in-header slides/header.tex \
+	    --slide-level 3 \
 	    -V theme:Warsaw -o slides.pdf
 
 slides: slides.pdf
