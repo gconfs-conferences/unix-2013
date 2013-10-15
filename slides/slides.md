@@ -336,7 +336,7 @@
 
 ## Arch Linux (Advanced Users)
 
-- Est en rolling release
+- Rolling release
 - Utilise `pacman` comme package manager
 - Les outils sont intégrés peu de temps après leur release
     - Les utilisateurs peuvent alors subir plus de bugs, cela n'empêche pas la
@@ -347,7 +347,7 @@
 
 ## Gentoo (Advanced Users)
 
-- Est en rolling release aussi
+- Rolling release aussi
 - Les outils sont integrés peu de temps après leur release
 - Compilation depuis les sources (portage)
     - Plus de controle sur le système et les logiciels
