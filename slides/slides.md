@@ -87,7 +87,7 @@
 ##
 \begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
 
-## chmod et chgrp sont dans un :bateau...
+## chown et chgrp sont dans un :bateau...
 
 - Du calcul mental!?
 - user, group, others, all
