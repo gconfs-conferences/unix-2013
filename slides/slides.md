@@ -1,3 +1,5 @@
+\maketitle
+
 # Un peu d'histoire
 
 ### Années 70
