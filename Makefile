@@ -1,4 +1,4 @@
-slides.pdf: slides/slides.md
+slides.pdf: slides/slides.md slides/header.tex
 	pandoc -t beamer \
 	    slides/slides.md \
 	    --include-in-header slides/header.tex \
