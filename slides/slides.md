@@ -7,13 +7,14 @@
 - 1969 : Ken Thompson, Dennis Ritchie et Rob Pike commencent à travailler sur
   UNICS
 - 1973 : UNIX est réécrit en C
-- 1975 : Les Laboratoires Bell se décident à distribuer UNIX à l'extérieur.
+- 1975 : Les Laboratoires Bell se décident à distribuer UNIX au grand
+  public
 - 1977 : Bill Joy travaille sur la première version de BSD : 1BSD
 
 ### 1983
 
 - Richard Stallman annonce son intention de développer un système d'exploitation
-  libre appelé GNU (GNU's not UNIX)
+  libre d'accès appelé GNU (GNU's not UNIX)
 - AT&T annonce la sortie de System V, première version véritablement
   propriétaire d'UNIX
 
@@ -23,9 +24,9 @@
 - Apparition du standard POSIX (Portable Operating System Interface for uniX)
     - Standardisation des différents systèmes basés sur UNIX.
         - POSIX garantit la présence de signaux permettant la gestion de
-          processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL, etc...)
+          processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL, etc.)
         - ... mais aussi la présence de certains logiciels quelque soit l'OS sur
-          lequel ils sont utilisés (ex : vi, ls, sh etc)
+          lequel ils sont utilisés (ex : vi, ls, sh, etc.)
 
 ### 1991
 
@@ -37,20 +38,19 @@
 ### Précisions
 
 - Il existe deux types de systèmes UNIX :
-    - UNIX compliant
+    - POSIX-compliant
     - UNIX-like
 
 # Les concepts importants
 
 ## Une philosophie...
 
-### Une philosophie, pour un Système d'exploitation!?
+### Une philosophie, pour un Système d'exploitation !?
 
-- On parle pas de platon, mais de concepts de design
+- On ne parle pas de Platon, mais de concepts de design
 - Tous les systèmes sont conçus comme ça, en écrivant avant de coder
-- Unix a une philosophie... assez spéciale
 
-### 9 Tenets Majeurs
+### 9 Principes majeurs (1/2)
 
 - Small is beautiful
 - Make each program do one thing well
@@ -58,7 +58,7 @@
 - Choose portability over efficiency
 - Store data in flat text files
 
-### 9 Tenets Majeurs
+### 9 Principes majeurs (1/2)
 
 - Use software leverage to your advantage
 - Use shell scripts to increase leverage and portability
@@ -73,11 +73,11 @@
 
 - Unix est orienté texte
 
-## Un peu beaucoup de technique...
+## Un peu de technique...
 
 ### Le théorème de la mangue
 
-- Un noyau + un userspace = un OS
+- noyau + userspace = OS
 - GNU/Linux ou Linux?
 
 ### Un noyau, des pépins
@@ -94,15 +94,16 @@
 - Standardisé (Posix, SUS)
 - La partie du système avec laquelle on interagit le plus
 
-### got root ?
+### got root?
 
 - Qui est root ?
-    - Le premier utilisateur sur un système d'exploitation
+    - Le premier utilisateur sur UNIX
     - Il a **tous** les droits :
         - Il est donc préférable de ne se connecter en root que pour
           effectuer des opérations de maintenance (ou pas)
         - "With great power comes great responsibility"
-        - `chmod -R 777 /`
+        - Un type de commande à ne pas faire en root
+            `chmod -R 777 /`
 
 ### sudo
 
@@ -113,7 +114,6 @@
 ### J'ai le droit, j'ai pas le droit...
 
 - Unix et les permissions, une histoire.. complexe
-    - Le root
 - Système de permissions intégré au système
 - ACL, SELinux, ..?
 
@@ -122,10 +122,10 @@
 
 ### chown et chgrp sont dans un :bateau...
 
-- Du calcul mental!?
+- Du calcul mental !?
 - user, group, others, all
 - read(4), write(2), execute(1)
-- maintenant, un peu de calcul...
+- Maintenant, un peu de calcul...
 
 ### De l'aspirix?
 
@@ -151,46 +151,45 @@
 
 - La configuration système se fait dans `/etc`
 - Un type de fichier "standard" : `conf` (basé sur du shell)
-- Standard, parfois.
 
 ###
 
 \begin{center}\includegraphics[scale=0.5]{ressources/standards}\end{center}
 
-### Apprendre a lacer ses boots
+### Apprendre à lacer ses boots
 
 - Le boot se passe en plusieurs étapes :
-    - Le BIOS (hors d'UNIX)
-    - Le bootloader (hors d'Unix)
+    - Le BIOS (avant UNIX)
+    - Le bootloader (avant Unix)
     - Le kernel (au coeur d'Unix)
     - `init` (dans Unix)
-    - système booté (donc oui, c'est dans Unix...)
+    - Système booté (donc oui, c'est dans Unix...)
 
-### Les chaussures a scratch, ça existe aussi
+### Les chaussures à scratch, ça existe aussi
 
 - `init` est le système de boot standard sous UNIX
-- Cependant, d'autres système existent :
+- Cependant, d'autres systèmes existent :
     - `rc` (principalement BSD)
-    - `upstart` (principalement ubuntu)
-    - `systemd` (uniquement linux, mais pas tous)
+    - `upstart` (principalement Ubuntu)
+    - `systemd` (uniquement Linux, mais pas tous)
 - De grosses différences existent entre ces systèmes de boot...
-- ... Mais on ne va pas les expliquer ici
+- ... mais on ne va pas les expliquer ici
 
 ### Les modes de fonctionnement
 
-- Unix a plusieurs `runlevels`
-    - Controlent l'activation ou non des différentes fonctionnalités
-    - De fonctionalités **kernel**
+- Unix à plusieurs `runlevels`
+    - Contrôlent l'activation ou non des différentes fonctionnalités
+    - De fonctionnalités **kernel**
 - On ne peut changer de runlevel qu'en tant que root
 - Certains runlevels peuvent être dangereux pour le système
 
-### T'aurais pas une clope?
+### T'aurais pas une clope ?
 
 - La gestion des logiciels sous Unix ne se fait pas comme sous Windows
-- La compilation directement depuis le code? Pas vraiment...
-    - Trop long (nécessite de récupérer le code, de l'installer a la main...)
+- La compilation directement depuis le code ? Pas vraiment...
+    - Trop long (nécessite de récupérer le code, de l'installer à la main...)
     - Trop complexe
-    - Trop couteux en ressources
+    - Trop coûteux en ressources
 - La plupart des systèmes Unix modernes ont un package manager
 
 ### Le tabagiste
@@ -199,11 +198,11 @@
 - Ils sont conçus pour la ligne de commande, mais ont souvent une GUI
 - Ils dépendent de la distribution
 
-### Ça y est, c'est fini la technique?
+### Ça y est, c'est fini la technique ?
 
 - La technique, c'est fini... et non
 - Unix se découvre en étant utilisé, bien plus qu'en étant décrit
-- Bon courage!
+- Bon courage !
 
 
 # Bien choisir son système
@@ -216,7 +215,7 @@
     - Une distribution est un système d'exploitation basé sur GNU/Linux
     - Le terme désigne l'écosystème qui entoure l'OS :
         - le gestionnaire de paquet
-        - les outils spécifiques a la distribution
+        - les outils spécifiques à la distribution
         - les différences avec les standards
         - le système d'init
         - etc....
