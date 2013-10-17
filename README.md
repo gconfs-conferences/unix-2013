@@ -5,323 +5,552 @@ Les slides peuvent être générées via pandoc avec la commande suivante :
 
     make slides
 
-Plan de la conf (au 7/10/2013)
+Plan de la conf (au 17/10/2013)
 ------------------------------ 
 
-* Introduction historique (Wxcafé,Bruce)
-	
-	* Fin des années 60 : UNICS @ Bell Laboratories
-	
-	* 1973 : UNIX est réecrit en C -> gros progrès car portatif,
-	insister là dessus.
-	
-	* 1975 : UNIX est distribué en dehors des laboratoires Bell.
-	
-	* 1977-78 : Naissance de BSD à Berkeley, Californie (Berkley
-	Software Distribution).
-	
-	* 1983 : Naissance du projet GNU (parler rapidement de GNU /
-	Stallman), commercialisation d'UNIX sous le nom de System V 
-	(et aussi naissance de USL - Unix System Laboratories).
-	
-	* 1988 : POSIX apparait, décrire ce qu'est POSIX (standards
-	garantissant la compatibilité entre différents OS, parler
-	rapidement des signaux tels que SIGINT, SIGKILL par exemple et
-	rajouter quelques phrases sur les logiciels garantis par POSIX
-	(genre vi)).
-	
-	* 1991 : Naissance du Noyau Linux (introduire rapidement
-	l'histoire de Torvalds puis afficher son message sur
-	comp.os.minix).
-	
-* Explications sur des notions importantes (Dettorer,Wxcafé,Bruce)
+<!-- Intro Dettorer -->
 
-	* Différence entre UNIX compliant et UNIX like
-	
-	* Revenir sur POSIX
-	
-	* Insister sur le fait que Linux = Noyau et non OS.
-	
-* Partie graphes :
+# Un peu d'histoire <!-- Bruce -->
 
-	* Montrer si possible [ca](http://www.levenez.com/unix/unix.pdf) pour
-	insister sur le fait qu'UNIX c'est pas qu'une petite partie de
-	l'histoire de l'info.
-	
-	* [ca aussi](http://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg)
-	
-* Bien choisir sa distribution (Dettorer, Bruce, Wxcafé) :
-	
-	* Notion de Distribution (Bruce)
-		* C'est *un OS*
-		* Designe un OS et ce qui l'entoure (logithèque, manuels
-		etc..)
-	
-	* Pourquoi bien choisir sa distribution est important ?
-	(Dettorer) :
-		* Insister sur le fait que les users de différentes distribs
-		n'auront pas spécialement les mêmes opérations à effectuer
-		(genre Gentoo)
-		* Parler du fait que certaines distributions sont vraiment différentes,
-		genre [Source Mage Linux](http://www.sourcemage.org/), [Gobo Linux](http://www.gobolinux.org/?page=at_a_glance) ou [crux](http://crux.nu/), 
-		et sont donc completement incompatibles au niveau du système. 
-			
-	* Exemples de distributions :
-		
-		* User friendly (cherche à reproduire l'expérience windows,
-		mais reste du LINUX/UNIX) (Bruce)
-			
-			* Ubuntu :
-				* Basée sur Debian
-				* Ecosystème riche développé par Canonical
-				* Populaire pour sa simplicité de prise en main
-			
-			* Linux Mint :
-				* Basée sur Ubuntu (il existe une version basée sur
-				Debian)
-				* Dépôts d'Ubuntu (Debian pour LMDE) mais possède ses dépots
-				  propres ou sont hébergés leurs projets persos
-				* Intègre de base des logiciels propriétaires -> expérience 
-				  utilisateur ++.
+### Années 70
 
-			* elementaryOS :
-				* Basée sur Ubuntu
-				* Dépots propres
-				* Interface très simple, ressemble beaucoup a OS X
-				* Integre de base des logiciels proprios, codecs, drivers, etc.
-			
-			* Manjaro Linux (ou Manjaro)
-				* Basée sur Arch Linux
-				* Suit le principe de la rolling release (expliquer)
-				* Très user friendly par rapport à Arch
-				* Dépôts :
-					* Propres à Manjaro
-					* Arch (avec ~2/3 jours de retard)
-					* AUR
-			
-			* PC-BSD
-				* BSD, basée sur FreeBSD
-				* Utilise les "dépots" de fBSD, et le même userland/kernel
-				* A comme principale différence d'avoir une procédure
-				  d'installation simplifiée et de nombreux logiciels
-				  préinstallés en plus.
-				* Du coup, bien plus facile a installer et a utiliser que
-				  fBSD 
-		
-		* Stable : (Bruce)
-			
-			* Debian :
-				* Réputée pour sa stabilité
-				* Developpée de manière bénévole par des centaines
-				de dev
-				* dépôts outdated par rapport à certaines distribs
-				(d'où sa stabilité)
-			
-			* Slackware : 
-				* Connue pour sa stabilité
-				* Dépôts vieux par rapport aux autres distribs
-				* Gestionnaire de paquet très ancien ne gérant pas les
-				  dépendances
-				* Toujours très utilisée pour faire du hosting, notamment
-				
-			* RHEL :
-				* Stable parce que soutenue par Red Hat
-				* Appartient a Red Hat (parler du système de licences et du
-				  business model de RH)
-				* Paquets moins vieux que debian, mais stable quand même (vu
-				  qu'y a des gens payés pour bosser dessus)
-				* Utilise systemd, pulseaudio...
-				* Connue pour avoir hébergé le developpement de projets
-				  discutés (systemd et pulseaudio, donc)
-				* Très proche de Fedora, qui est un "clone" communautaire
-			
-			* SUSE enterprise
-				* Principal concurrent de RHEL
-				* Parler d'OpenSUSE, version gratuite et avec support
-				  communautaire  
-		
-		* Advanced User : (Dettorer)
-			
-			* Arch Linux
-				* Rolling Release
-				* Intégration rapide des nouveaux outils peu de
-				temps après leur release par les devs
-					* Un peu à l'opposée de Debian, les users
-					subissent les premiers bugs mais distrib souvent
-					mise à jour.
-				* Systemd
-				* Installation guidée (mentionner le Beginner's
-				guide) jusqu'à l'obtention d'un os sans serveur x
-				* Doc très bien fournie (wiki) et Communauté
-				réactive (forum)
-			
-			* Gentoo
-				 * Rolling release
-				 * Packages à compiler soi même (la plupart du
-				 temps)
-					* use flags
-				 * Doc très fournie
-					* Il peut être intéressant pour les nouveaux
-					users de commencer par gentoo (la doc
-						commençant depuis zéro)
-			
-			* BSD : (Wxcafe)
-				
-				* Résumé sur BSD vite fait :
-					* Historique rapide (Berkeley, BSDi, Lawsuit, ... )
-					* Différences avec GNU/Linux et SysV résumées
-					* Licence BSD (?)
-				
-				* FreeBSD : 
-					* Basée sur 386BSD/4.2BSD
-					* Première BSD a ne pas être développée par Berkeley en tant
-					  que tel
-					* Le projet comprend quand même beaucoup de devs ayant bossé
-					  sur AT&T UNIX et les premières BSDs
-					* Connue pour être user-friendly, pour une BSD...
-					* Support de drivers assez limité, et donc
-					* Installation assez simple jusqu'a un système sans X, et
-					  bien plus compliquée après
-					* Système de ports, et packages binaires via pkgng
-						* serveur pkgng down depuis bientôt 9 mois suite a une
-						  intrusion sur le serveur, projet en semi-abandon
-				
-				* NetBSD :
-					* Basée sur 386BSD/4.3BSD
-					* Le projet comprend plutôt des devs ayant bossés sur les
-					  BSDs originelles a Berkeley
-					* Support de drivers encore plus limité que FreeBSD
-					* Connue pour être un excellent système serveur
-					* [`pkgsrc`](http://pkgsrc.org) fournit les ports et les 
-					  packages binaires
-				
-				* OpenBSD :
-					* Basée sur NetBSD
-						* Théo de Raadt viré de NetBSD en 1994
-						* Part créer OpenBSD
-					* Connue pour son orientation sécurité, et très portée sur
-					  ce point
-						* La sécurité d'oBSD passe avant tout par du code
-						  "propre", très audité
-						* Privilégie largement la sécurité a la facilité
-						  d'utilisation
-					* Connue aussi pour avoir créé OpenSSH, sudo, pf,
-					  OpenSMTPD...
-					* Gestion des drivers remarquablement bon pour une BSD
-					* Système de "ports", et packages binaires via pkg_add
-			
-			* Autres UNIX-likes (Wxcafé)
-				
-				* Plan9 :
-					* Evolution directe de AT&T UNIX
-					* Système orienté graphique, au contraire d'UNIX
-					* A inventé procFS, qui permet de gérer les processus comme
-					  des fichiers
-					* a inventé netFS, qui permet de gérer les socket comme des
-					  fichiers
-					* est entièrement compatible Unicode, au contraire de...
-					  tous les autres systèmes aujourd'hui
-					* a créé unionFS, qui permet de monter plusieurs FS sur un
-					  même dossier concurrentiellement **et** de gérer un
-					  namespace séparé par processus
-					* a surtout créé le protocole 9P, qui sert a accéder aux
-					  ressources système, et a communiquer avec les programmes,
-					  les dnneées, les processus, l'UI, et le réseau. Pas d'API
-					  puisque tout est présenté sous forme de FS standard.
-					* a donc poussé le concept d'UNIX a l'extrème.
-					* malheureusement, reste très peu utilisé en dehors des
-					  universités, a cause de l'inertie des habitudes.
-				
-				* SunOS :
-					* Développée par Sun Microsystems
-					* Basée sur BSD
-					* Développée entre 82 et 92
-					* a posé les bases de la collaboration entre entreprises sur
-					  des interfaces standard (OpenWindows)
-				
-				* {,Open}Solaris :
-					* Basé sur System V Rev 4, développé en collaboration par
-					  AT&T et Sun
-					* Système de référence sur archi SPARC
-					* Connue pour supporter particlièrement bien les grands
-					  nombres de processeurs
-					* Du coup, clairement orientée serveurs, mais supporte X
-					  sans problème
-					* Globalement morte depuis le rachat de Sun par Oracle,
-					  [forkée par un contributeur](http://wiki.illumos.org/display/illumos/illumos+Home)
-				
-				* Hurd :
-					* Projet GNU depuis 1990, toujours pas en version stable
-					* Remplacement du noyau UNIX open-source, alternative a
-					  Linux
-					* Microkernel (expliquer rapidement ce qu'est un Microkernel)
-					* Étend sur UNIX quasiment autant que Plan9, du moins dans
-					  le concept.
-				
-				* Darwin :
-					* Système Open-Source composé d'un kernel hybride XNU (Mach 
-					  plus BSD) et d'un userspace basé sur fBSD
-					* Base de Mac OS X, qui ne rajoute quasiment que l'interface
-					  graphique
-					* Base d'iOS, qui ne rajoute que l'interface graphique
-					* Base de plusieurs OS completement libres : OpenDarwin,
-					  PureDarwin...
-				
-				* Autres :
-					* AIX (IBM)
-					* BlackBerry 10
-					* Android
-					* Firefox OS
-					* Haiku (posix compliant, clone de BeOS)
-					* HP-UX
-					* IRIX (Silicon GraphX, MIPS)
-					* LynxOS (Real-Time OS, used in aeronautics, telecom...)
-					* Minix (First Microkernel, inspired Linux)
-					* NeXTStep (dev par NeXT (Steve Jobs), base histo de OS X)
-					* QNX (base de la BlackBerry Playbook)
-					* Ultrix (Unix for DEC minicomputers (PDPs))
-					* WebOS (Palm puis HP puis LG)
-					* much much more... (montrer le graph ici? Oui, mais
-                    parler **rapidement** de ce qui est cité plus haut)
-				 
-	* La console : qu'est ce que c'est ? (Dettorer,Wxcafé,Bruce)
-		
-		* présenter rapidement ce qu'est la console (avec un screen /
-		une vm qui tourne)
-		
-		*  Le shell c'est quoi ?
-			* Définir un Shell
-			* Parler de sh, csh, bash et zsh et présenter rapidement leurs
-			features.
-		
-		* Intéragir avec la console (et par extension sa machine)
-			
-			* Les commandes c'est quoi ?
-			
-			* Présenter celles de base puis s'amuser un peu avec les
-			fichiers (mkdir, cd, cp, mv, rm, ln, etc)
-				* Introduire rapidement vim, nano pour l'édition de
-				fichiers.
-			
-			* Introduire man avec les arguments qu'on peut passer à une
-            commande
-			
-			* Expliquer qui est l'user "root", et pourquoi il faut faire
-			gaffe lorsqu'on utilise certaines commandes en root.
-				* parler de sudo
-	
-	* Les scripts : rapide intro (par Dettorer ?)
-		TODO
+- 1969 : Ken Thompson, Dennis Ritchie et Rob Pike commencent à travailler sur
+  UNICS
+- 1973 : UNIX est réécrit en C
+- 1975 : Les Laboratoires Bell se décident à distribuer UNIX au grand
+  public
+- 1977 : Bill Joy travaille sur la première version de BSD : 1BSD
 
-	* MISC (à caser, ou pas) :
-		* Parler du système de fichiers de Linux ? (Dettorer)
+### 1983
 
-	* DA TP :
-		
-		* Install Party
-			* faire un pdf explicatif (avertir les mecs qui n'ont jamais
-			partitionné leur disque qu'ils peuvent utiliser une vm par
-			exemple ?)
-		
-		* Protocole pour design des scripts, pour ceux qui ont déjà pu
-		toucher à du linux/unix avant. (Dettorer,Wxcafé)
+- Richard Stallman annonce son intention de développer un système d'exploitation
+  libre d'accès appelé GNU (GNU's not UNIX)
+- AT&T annonce la sortie de System V, première version véritablement
+  propriétaire d'UNIX
+
+
+### 1988
+
+- Apparition du standard POSIX (Portable Operating System Interface for uniX)
+    - Standardisation des différents systèmes basés sur UNIX.
+        - POSIX garantit la présence de signaux permettant la gestion de
+          processus (ex : SIGSEGV, SIGINT, SIGTERM, SIGKILL, etc.)
+        - ... mais aussi la présence de certains logiciels quelque soit l'OS sur
+          lequel ils sont utilisés (ex : vi, ls, sh, etc.)
+
+### 1991
+
+- Naissance du Noyau Linux
+    - Annonce sur comp.os.minix (Usenet) par Linus Torvalds
+    - Première release quelques mois plus tard
+    - Engouement pour le projet dès la première release
+
+### Précisions
+
+- Il existe deux types de systèmes UNIX :
+    - POSIX-compliant
+    - UNIX-like
+
+# Les concepts importants
+
+## Une philosophie... <!-- Wxcafe -->
+
+### Une philosophie, pour un Système d'exploitation !?
+
+- On ne parle pas de Platon, mais de concepts de design
+- Tous les systèmes sont conçus comme ça, en écrivant avant de coder
+
+### 9 Principes majeurs (1/2)
+
+- Small is beautiful
+- Make each program do one thing well
+- Build a prototype as soon as possible
+- Choose portability over efficiency
+- Store data in flat text files
+
+### 9 Principes majeurs (2/2)
+
+- Use software leverage to your advantage
+- Use shell scripts to increase leverage and portability
+- Avoid captive user interfaces
+- Make every program a filter
+
+### Et quelques principes mineurs
+
+- Unix est orienté utilisateurs avancés
+    - Il prend comme acquis que ses utilisateurs savent ce qu'ils font
+    - Les utilisateurs novices ne sont pas aidés, en aucun cas
+
+- Unix est orienté texte
+
+## Un peu de technique...
+
+### Le théorème de la mangue
+
+- noyau + userspace = OS
+- GNU/Linux ou Linux?
+
+### Un noyau, des pépins
+
+- Le lien entre le hardware et le software
+- Différents types de noyau :
+    - kernel monolithique (Linux, Unix...)
+    - microkernel (Minix, GNU Hurd)
+    - kernel hybride (Apple XNU)
+
+### l'userSPAAAAAAAAACE
+
+- Base d'un système
+- Standardisé (Posix, SUS)
+- La partie du système avec laquelle on interagit le plus
+
+### got root? <!-- On move ça (et la suivante) après "de l'aspirix" ? -->
+
+- Qui est root ?
+    - Le premier utilisateur sur UNIX
+    - Il a **tous** les droits :
+        - Il est donc préférable de ne se connecter en root que pour
+          effectuer des opérations de maintenance (ou pas)
+        - "With great power comes great responsibility"
+        - Un type de commande à ne pas faire en root
+            `chmod -R 777 /`
+
+### sudo
+
+- `sudo` (superuser do) est un projet originaire d'OpenBSD
+- Améliore la sécurité du système : pas besoin d'utiliser le root
+- Simplifie l'administration du système
+
+### J'ai le droit, j'ai pas le droit...
+
+- Unix et les permissions, une histoire.. complexe
+- Système de permissions intégré au système
+- ACL, SELinux, ..?
+
+###
+
+\begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
+
+### chown et chgrp sont dans un :bateau...
+
+- Du calcul mental !?
+- user, group, others, all
+- read(4), write(2), execute(1)
+- Maintenant, un peu de calcul...
+
+### De l'aspirix?
+
+700 -> u+rwx,g-rwx,o-rwx\newline
+755 -> u+rwx,g+rx,o+rx\newline
+644 -> u+rw,g+r,o+r\newline
+...
+
+### ls -l /
+
+- La racine `/` contient tous les systèmes de fichiers
+- `mount` est la commande magique
+- `/dev` contient les fichiers spéciaux
+
+### C:\\NOPE
+
+- Le système de fichier d'UNIX est complet : pas de
+  `C:\Documents%20and%20Settings\` ici
+- Des points de montage pour tout
+- *Tout* est fichier
+
+### Config de canard <!-- Oui, j'ai faim en faisant ces slides... -->
+
+- La configuration système se fait dans `/etc`
+- Un type de fichier "standard" : `conf` (basé sur du shell)
+
+###
+
+\begin{center}\includegraphics[scale=0.5]{ressources/standards}\end{center}
+
+### Apprendre à lacer ses boots <!-- Dettorer -->
+
+- Le boot se passe en plusieurs étapes :
+    - Le BIOS (avant UNIX)
+    - Le bootloader (avant Unix)
+    - Le kernel (au coeur d'Unix)
+    - `init` (dans Unix)
+    - Système booté (donc oui, c'est dans Unix...)
+
+### Les chaussures à scratch, ça existe aussi
+
+- `init` est le système de boot standard sous UNIX
+- Cependant, d'autres systèmes existent :
+    - `rc` (principalement BSD)
+    - `upstart` (principalement Ubuntu)
+    - `systemd` (uniquement Linux, mais pas tous)
+- De grosses différences existent entre ces systèmes de boot...
+- ... mais on ne va pas les expliquer ici
+
+### Les modes de fonctionnement
+
+- Unix à plusieurs `runlevels`
+    - Contrôlent l'activation ou non des différentes fonctionnalités
+    - De fonctionnalités **kernel**
+- On ne peut changer de runlevel qu'en tant que root
+- Certains runlevels peuvent être dangereux pour le système
+
+### T'aurais pas une clope ?
+
+- La gestion des logiciels sous Unix ne se fait pas comme sous Windows
+- La compilation directement depuis le code ? Pas vraiment...
+    - Trop long (nécessite de récupérer le code, de l'installer à la main...)
+    - Trop complexe
+    - Trop coûteux en ressources
+- La plupart des systèmes Unix modernes ont un package manager
+
+### Le tabagiste
+
+- Un package manager permet d'installer facilement des logiciels
+- Ils sont conçus pour la ligne de commande, mais ont souvent une GUI
+- Ils dépendent de la distribution
+
+### Ça y est, c'est fini la technique ?
+
+- La technique, c'est fini... et non
+- Unix se découvre en étant utilisé, bien plus qu'en étant décrit
+- Bon courage !
+
+
+# Bien choisir son système
+
+## Les distributions linux
+
+### "Distributions"?...
+
+- Wtf is a distribution ?
+    - Une distribution est un système d'exploitation basé sur GNU/Linux
+    - Le terme désigne l'écosystème qui entoure l'OS :
+        - le gestionnaire de paquet
+        - les outils spécifiques à la distribution
+        - les différences avec les standards
+        - le système d'init
+        - etc....
+
+### Choisir sa distribution
+
+- Choisir sa distribution est primordial
+    - Un utilisateur n'aura pas la même experience suivant la distribution :
+        - les procédés d'installation, de mise a jour, de gestion,... diffèrent
+        - l'état du système après une installation basique diffère
+        - la "cible" des distributions est différente
+
+- On peut distinguer trois types de distributions :
+    - User friendly
+    - Stable
+    - Avancée
+
+## Quelques exemples de distributions
+
+### Ubuntu (User Friendly) <!-- Bruce -->
+
+- Basée sur Debian
+- Possède un écosystème riche développé par Canonical
+- Très populaire pour sa simplicité de prise en main
+
+### Linux Mint (User Friendly)
+
+- Basée sur Ubuntu
+    - Il existe aussi une version basée sur Debian Testing (LMDE)
+- Possède ses propres dépôts mais les utilisateurs ont aussi accès aux dépôts
+  Ubuntu (Debian dans le cas de LMDE)
+- Intègre de base des logiciels propriétaires (ex : flash player)
+
+### elementary OS (User Friendly)
+
+- Basée sur Ubuntu
+- Possède ses propres dépôts
+- Interface simpliste (d'énormes ressemblances avec OS X)
+- Intègre de base des logiciels et drivers propriétaires (comme Mint)
+
+### Manjaro Linux (User Friendly)
+
+- Basée sur Arch Linux
+- Est en rolling release
+- Beaucoup plus user friendly qu'Arch (de l'installation à l'utilisation)
+- Dépôts :
+    - Propres à Manjaro
+    - Arch Linux (avec un peu de retard)
+    - AUR
+
+### Fedora (User Friendly)
+
+- Maintenue par une communauté très active
+- Distribution assez ancienne, basée sur Red Hat
+- Globalement simple d'utilisation
+- Souvent assez en avance sur Ubuntu en terme de mises a jour
+
+### OpenSUSE (User Friendly)
+
+- Maintenue par la communauté
+- Principale "concurrente" de Fedora
+- Interface d'administration graphique YaST
+
+### Debian (stable)
+
+- **Très** stable
+- Utilise `apt`/`dpkg` comme package manager
+- Developpée par des bénévoles issus de la communauté Debian
+- Contrat Social Debian, très important pour le projet
+- Paquets plutôt vieux par rapport aux autres distributions
+
+### Slackware (stable)
+
+- Très stable, utilisée en entreprises et en production
+- Paquets vieux par rapport aux autres distributions
+- Le gestionnaire de paquets ne gère pas les dépendances
+    - Du coup, assez complexe a gerer et a installer
+
+### RHEL (stable)
+
+- Maintenue par Red Hat
+- Utilise `yum`/`rpm` (Red Hat Package Manager)
+- Distribution commerciale
+- Paquêts un peu moins vieux que Debian
+- Utilise systemd
+- Base de Fedora
+
+### SUSE entreprise (stable)
+
+- Orientée business (comme RHEL)
+- Utilise `zypper` (basé sur `rpm`) comme package manager
+- Ressemble beaucoup a RHEL, mais est plus orientée workstations que serveurs
+- Il existe une version gratuite et communautaire : OpenSUSE
+
+### Arch Linux (Advanced Users) <!-- Dettorer -->
+
+- Rolling release
+- Utilise `pacman` comme package manager
+- Les outils sont intégrés peu de temps après leur release
+    - Les utilisateurs peuvent alors subir plus de bugs, cela n'empêche pas la
+      mise à jour régulière de la distro
+        - Utilise systemd
+        - La documentation est régulièrement mise à jour (beginner's guide) et
+          la communauté particulièrement réactive
+
+### Gentoo (Advanced Users)
+
+- Rolling release aussi
+- Les outils sont integrés peu de temps après leur release
+- Compilation depuis les sources (portage)
+    - Plus de controle sur le système et les logiciels
+    - Nécessite un materiel efficace (a ne pas installer tel quel sur un
+      netbook)
+    - Tout est opti pour le système utilisé -> meilleurs performances
+
+## BSD, un autre style de distribution <!-- wxcafé -->
+
+### Melons et Pommes...
+
+- Des projets completement séparés
+    - Pas de partage du noyau, ni des outils
+    - Peu de portabilité
+    - Contributeurs différents, visions différentes
+- Beaucoup de forks...
+
+### No More Distros
+
+- Trois BSDs majeures : Net, Free et Open
+- D'autres sont importantes : DragonFlyBSD, GhostBSD, ArchBSD
+- A noter : Debian GNU/kFreeBSD
+
+### NetBSD : La base
+
+- Première des majeures (1993)
+- Détachée de Berkeley depuis le début du projet
+- Utilise pkgsrc, qui fait a la fois office de gestionnaire de ports et de
+  paquets
+- Centrée sur la stabilité et les performances
+
+### FreeBSD : La base, bis
+
+- Seconde des majeures, a quelques mois près (1993)
+- Toujours attachée a Berkeley
+- Utilise un système de ports, et pkgng pour les paquets
+- Centrée sur la simplicité et la portabilité
+
+### OpenBSD : La parano
+
+- Forkée de NetBSD (1995)
+- Très connue pour sa sécurité (ou sa paranoïa?)
+- Utilise un système de ports, et pkg\_add pour les paquets
+- A notamment donnée naissance a OpenSSH, OpenSSL,
+  pf, tmux, spamd, etc...
+
+### Les mineures
+
+- DragonFlyBSD
+    - Forkée de FreeBSD, centrée sur la légèreté du système
+- ArchBSD
+    - Archlinux, avec une base FreeBSD
+- Debian GNU/kFreeBSD
+    - Projet debian, basé sur le système debian avec un noyau kfreebsd
+    - `sudo apt-get install kfreebsd-image-amd64`
+- PC-BSD (User-Friendly)
+    - FreeBSD, moins l'installation
+
+## Les autres Unix-like
+
+### "Bon, il finit quand l'autre la haut...?"
+
+- D'autres systèmes basés sur UNIX existent
+- Développés dans différents buts
+- Plus ou moins utilisables...
+- Mais on va les passer en revue (vite, ne vous inquietez pas)
+
+### Plan9 from Bell Labs
+
+- Évolution "officielle" d'Unix (venant de Bell Labs)
+- Énormément de nouveautés par rapport a Unix :
+    - Système orienté graphique
+    - Origine de ProcFS
+    - Origine de NetFS
+    - Créé avec une compatibilité unicode (au contraire de tous les systèmes
+      actuels...)
+    - Origine d'UnionFS
+    - etc, etc, etc...
+
+### SunOS
+
+- Système développé par Sun Microsystems (1982 - 1992)
+- Basé sur BSD, lourdement modifié
+    - Seul système a fonctionner sur SPARC a l'époque
+- a posé les bases de la collaboration entre entreprises pour des interfaces
+  standard (OpenWindows)
+
+### {,Open}Solaris
+
+- Basé sur Unix SysV, développé en collaboration par AT&T et Sun
+- Reste encore la référence sur archi SPARC
+- Connue pour supporter particulièrement bien les clusters de processeurs
+- Clairement orientée serveurs, mais suivant les standard, supporte Xorg
+- Projet enterré depuis le rachat de Sun par Oracle
+
+### GNU Hurd
+
+- Projet GNU depuis 1990, toujours en developpement (v0XX) <!-- A checker -->
+- Remplacement du noyau Unix, en logiciel libre
+    - Du coup, alternative a Linux
+- Étend Unix autant que Plan9, du moins... dans les plans
+
+### Darwin
+
+- Système Open-Source
+    - Composé d'un kernel XNU (hybride) et d'un userspace basé sur FreeBSD
+- Base de Mac OS X et d'iOS, qui rajoutent l'interface graphique
+- Plusieurs systèmes open-source basés dessus : OpenDarwin, PureDarwin...
+
+### Enfin, les autres ...
+
+- AIX (IBM)
+- BlackBerry 10
+- Android
+- Firefox OS
+- Haiku (posix compliant, clone de BeOS)
+
+### ... Et encore...
+
+- HP-UX
+- LynxOS
+- IRIX
+- Minix
+- NeXTStep
+
+### ... Et Toujours
+
+- QNX
+- Ultrix
+- WebOS
+- and much much more...
+
+<!-- Passer vite fait sur les trois slides précédent, en les énumérant.
+Maximum une phrase sur chaque OS. Fait pour mettre l'emphase sur le nombre de
+systèmes existants -->
+
+# Un peu de pratique ? <!-- Dettorer -->
+
+## Terminal ?
+
+### wtf is a terminal ?
+
+- Un terminal est une émulation de teletype (TTY)
+- Il permet d'interagir avec le système en mode texte
+- Le terminal contient un `shell`, auquel on donne des commandes
+
+### Le shell
+
+- Le shell est un interpréteur de commandes **et** un langage de scripts
+- Il permet a l'utilisateur de diriger directement sa machine
+- Il en existe plusieurs, assez différents
+
+### sh
+
+- Le `sh` originel (Bourne Shell), écrit par Stephen Bourne (AT&T)
+- Standardisé dans Posix
+- Assez limité de nos jours, mais impressionnant pour 1977
+
+### bash
+
+- Deuxième "grand" shell Unix compatible bourne (Bourne Again Shell)
+- Très souvent le shell par défaut sur les unix modernes
+- Contient des features pratiques :
+    - tab completion des commandes
+    - historique des commandes
+    - much more
+
+### ksh/pdksh
+
+- Évolution assez importante de bash
+- Créé par Sun (Korn Shell), réécrit par OpenBSD (Public Domain Korn Shell)
+- Assez peu utilisée, car contient des extensions non-standard
+
+### zsh
+
+- Très grosse évolution de bash
+- Contient un grand nombre de features :
+    - tab completion pour tout (fichiers, dossiers, arguments...)
+    - "menus" navigables
+    - edition de commandes multi-lignes dans un seul buffer
+    - correction de frappe automatique
+    - [...]
+
+### csh et tcsh
+
+- Écrit pour 2BSD, par Bill Joy
+- Syntaxe de script beaucoup plus proche du C
+- Globalement plus de features que bourne shell, mais moins que bash
+
+## Les commandes
+
+### Amusons nous avec les fichiers
+
+- Nous avons vu plus haut qu'il était possible d'interagir avec notre
+  sytème via des commandes.
+
+- On peut aussi opérer sur des fichiers et/ou dossiers :
+  mkdir, cd, cp, mv, rm, ls
+
+- Les fichiers peuvent être édités en console grâce à des éditeurs :
+    - vi
+        - Ecrit par Bill Joy en 1976
+        - Est présent sur tous les systèmes UNIX (depuis la version 3 de la
+          Single Unix Specification).
+    - GNU nano
+        - Ecrit par Chris Allegretta en 1999 afin de remplacer pico
+        - Présent sur la plupart des systèmes UNIX-like
+
+### man
+
+man
+
+### man man
+
+man man
+
+### man man man
+
+\begin{center}\includegraphics[scale=0.42]{ressources/manofsteel}\end{center}
