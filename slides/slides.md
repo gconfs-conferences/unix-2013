@@ -1,6 +1,8 @@
 \maketitle
 
-# Un peu d'histoire
+<!-- Intro Dettorer -->
+
+# Un peu d'histoire <!-- Bruce -->
 
 ### Années 70
 
@@ -43,7 +45,7 @@
 
 # Les concepts importants
 
-## Une philosophie...
+## Une philosophie... <!-- Wxcafe -->
 
 ### Une philosophie, pour un Système d'exploitation !?
 
@@ -58,14 +60,14 @@
 - Choose portability over efficiency
 - Store data in flat text files
 
-### 9 Principes majeurs (1/2)
+### 9 Principes majeurs (2/2)
 
 - Use software leverage to your advantage
 - Use shell scripts to increase leverage and portability
 - Avoid captive user interfaces
 - Make every program a filter
 
-### Et quelques tenets mineurs
+### Et quelques principes mineurs
 
 - Unix est orienté utilisateurs avancés
     - Il prend comme acquis que ses utilisateurs savent ce qu'ils font
@@ -94,7 +96,7 @@
 - Standardisé (Posix, SUS)
 - La partie du système avec laquelle on interagit le plus
 
-### got root?
+### got root? <!-- On move ça (et la suivante) après "de l'aspirix" ? -->
 
 - Qui est root ?
     - Le premier utilisateur sur UNIX
@@ -118,6 +120,7 @@
 - ACL, SELinux, ..?
 
 ###
+
 \begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
 
 ### chown et chgrp sont dans un :bateau...
@@ -156,7 +159,7 @@
 
 \begin{center}\includegraphics[scale=0.5]{ressources/standards}\end{center}
 
-### Apprendre à lacer ses boots
+### Apprendre à lacer ses boots <!-- Dettorer -->
 
 - Le boot se passe en plusieurs étapes :
     - Le BIOS (avant UNIX)
@@ -235,7 +238,7 @@
 
 ## Quelques exemples de distributions
 
-### Ubuntu (User Friendly)
+### Ubuntu (User Friendly) <!-- Bruce -->
 
 - Basée sur Debian
 - Possède un écosystème riche développé par Canonical
@@ -253,7 +256,7 @@
 
 - Basée sur Ubuntu
 - Possède ses propres dépôts
-- Interface simpliste (d'énormes ressemblances à OS X)
+- Interface simpliste (d'énormes ressemblances avec OS X)
 - Intègre de base des logiciels et drivers propriétaires (comme Mint)
 
 ### Manjaro Linux (User Friendly)
@@ -310,7 +313,7 @@
 - Ressemble beaucoup a RHEL, mais est plus orientée workstations que serveurs
 - Il existe une version gratuite et communautaire : OpenSUSE
 
-### Arch Linux (Advanced Users)
+### Arch Linux (Advanced Users) <!-- Dettorer -->
 
 - Rolling release
 - Utilise `pacman` comme package manager
@@ -331,7 +334,7 @@
       netbook)
     - Tout est opti pour le système utilisé -> meilleurs performances
 
-## BSD, un autre style de distribution
+## BSD, un autre style de distribution <!-- wxcafé -->
 
 ### Melons et Pommes...
 
@@ -460,7 +463,7 @@
 Maximum une phrase sur chaque OS. Fait pour mettre l'emphase sur le nombre de
 systèmes existants -->
 
-# Un peu de pratique ?
+# Un peu de pratique ? <!-- Dettorer -->
 
 ## Terminal ?
 
@@ -521,7 +524,7 @@ systèmes existants -->
   sytème via des commandes.
 
 - On peut aussi opérer sur des fichiers et/ou dossiers :
-  mkdir, cd, cp, mv, rm, ln
+  mkdir, cd, cp, mv, rm, ls
 
 - Les fichiers peuvent être édités en console grâce à des éditeurs :
     - vi
