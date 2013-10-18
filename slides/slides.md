@@ -291,13 +291,6 @@ Et en binaire : 001(x) 010(w) 100(r)
 - Contrat Social Debian, très important pour le projet
 - Paquets plutôt vieux par rapport aux autres distributions
 
-### Slackware (stable)
-
-- Très stable, utilisée en entreprises et en production
-- Paquets vieux par rapport aux autres distributions
-- Le gestionnaire de paquets ne gère pas les dépendances
-    - Du coup, assez complexe a gerer et a installer
-
 ### RHEL (stable)
 
 - Maintenue par Red Hat
