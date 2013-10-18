@@ -49,7 +49,7 @@
 
 ### Une philosophie, pour un Système d'exploitation !?
 
-- On ne parle pas de Platon, mais de concepts de design
+- Simplement des concepts de design, pas de prise de tête
 - Tous les systèmes sont conçus comme ça, en écrivant avant de coder
 
 ### 9 Principes majeurs (1/2)
@@ -90,38 +90,17 @@
     - microkernel (Minix, GNU Hurd)
     - kernel hybride (Apple XNU)
 
-### l'userSPAAAAAAAAACE
+### L'userSPAAAAAAAAACE
 
 - Base d'un système
 - Standardisé (Posix, SUS)
 - La partie du système avec laquelle on interagit le plus
 
-### got root? <!-- On move ça (et la suivante) après "de l'aspirix" ? -->
-
-- Qui est root ?
-    - Le premier utilisateur sur UNIX
-    - Il a **tous** les droits :
-        - Il est donc préférable de ne se connecter en root que pour
-          effectuer des opérations de maintenance (ou pas)
-        - "With great power comes great responsibility"
-        - Un type de commande à ne pas faire en root
-            `chmod -R 777 /`
-
-### sudo
-
-- `sudo` (superuser do) est un projet originaire d'OpenBSD
-- Améliore la sécurité du système : pas besoin d'utiliser le root
-- Simplifie l'administration du système
-
 ### J'ai le droit, j'ai pas le droit...
 
-- Unix et les permissions, une histoire.. complexe
+- Unix et les permissions ; une histoire.. complexe
 - Système de permissions intégré au système
 - ACL, SELinux, ..?
-
-###
-
-\begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
 
 ### chown et chgrp sont dans un :bateau...
 
@@ -135,13 +114,35 @@
 700 -> u+rwx,g-rwx,o-rwx\newline
 755 -> u+rwx,g+rx,o+rx\newline
 644 -> u+rw,g+r,o+r\newline
-...
+...\newline
+Et en binaire : 001(x) 010(w) 100(r)
+
+### got root?
+
+- Qui est root ?
+    - Le premier utilisateur sur un système UNIX
+    - Il a **tous** les droits :
+        - Il est donc préférable de ne se connecter en root que pour
+          effectuer des opérations de maintenance
+        - "With great power comes great responsibility"
+        - Un type de commande à ne pas faire en root
+            `chmod -R 777 /`
+
+### sudo
+
+- `sudo` (superuser do) est un projet originaire d'OpenBSD
+- Améliore la sécurité du système : pas besoin d'utiliser directement le root
+- Simplifie l'administration du système
+
+###
+
+\begin{center}\includegraphics[scale=0.5]{ressources/sandwich}\end{center}
 
 ### ls -l /
 
 - La racine `/` contient tous les systèmes de fichiers
 - `mount` est la commande magique
-- `/dev` contient les fichiers spéciaux
+- `/dev` contient des fichiers spéciaux
 
 ### C:\\NOPE
 
@@ -178,13 +179,13 @@
 - De grosses différences existent entre ces systèmes de boot...
 - ... mais on ne va pas les expliquer ici
 
-### Les modes de fonctionnement
+### Les modes de fonctionnement <!-- on vire ? -->
 
-- Unix à plusieurs `runlevels`
+- Unix a plusieurs `runlevels`
     - Contrôlent l'activation ou non des différentes fonctionnalités
     - De fonctionnalités **kernel**
 - On ne peut changer de runlevel qu'en tant que root
-- Certains runlevels peuvent être dangereux pour le système
+- Attention à certains runlevels.
 
 ### T'aurais pas une clope ?
 
@@ -203,7 +204,7 @@
 
 ### Ça y est, c'est fini la technique ?
 
-- La technique, c'est fini... et non
+- La technique, c'est fini... pour cette présentation !
 - Unix se découvre en étant utilisé, bien plus qu'en étant décrit
 - Bon courage !
 
